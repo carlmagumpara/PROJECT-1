@@ -1,0 +1,249 @@
+.postion-absolute-top {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+.flex-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.padding-top-220 {
+  padding-top: 220px;
+}
+
+.min-height-100-vh {
+  min-height: 100vh;
+}
+
+#loader {
+  position: fixed;
+  width: 80px;
+  height: 80px;
+  top: 50%;
+  left: 50%;
+  margin-top: -40px;
+  margin-left: -40px;
+  z-index: 999999999;
+}
+
+.margin-bottom-30 {
+  margin-bottom: 30px;
+}
+
+.margin-bottom-20 {
+  margin-bottom: 20px;
+}
+
+.margin-bottom-10 {
+  margin-bottom: 10px;
+}
+
+.margin-left-30 {
+  margin-left: 30px;
+}
+
+.margin-left-20 {
+  margin-left: 20px;
+}
+
+.margin-left-10 {
+  margin-left: 10px;
+}
+
+.margin-right-30 {
+  margin-right: 30px;
+}
+
+.margin-right-20 {
+  margin-right: 20px;
+}
+
+.margin-right-10 {
+  margin-right: 10px;
+}
+
+.margin-top-30 {
+  margin-top: 30px;
+}
+
+.margin-top-20 {
+  margin-top: 20px;
+}
+
+.margin-top-10 {
+  margin-top: 10px;
+}
+
+.margin-top-0 {
+  margin-top: 0px !important;
+}
+
+.side-menu a {
+  border-right: 0px;
+  border-top: 0px;
+  border-bottom: 2px solid #bbb;
+  border-left: 0px;
+}
+
+.side-menu a:last-child {
+  border-bottom: 0px !important;
+}
+
+.active-nav {
+  color: #d9534f;
+  border-bottom: 2px solid #d9534f;
+}
+
+.side-menu a:hover {
+  background-color: #adb5bd;
+  color: #ffffff;
+}
+
+#small-top-nav {
+  background-color: #333333;
+}
+
+#small-top-nav .nav-link {
+  padding: 15px !important;
+}
+
+#submit-legal-query {
+  padding: 10px 30px 10px 30px;
+}
+
+.bg-white {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+}
+
+.bg-transparent {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
+.bg-gray {
+  background-color: #f3f3f4;
+}
+
+.logo {
+  height: 110px;
+  transition: all 0.5s ease;
+}
+
+.small-logo {
+  height: 50px !important;
+  content: url('/../img/CTA.gif') !important;
+}
+
+.small-logo::after {
+  content: 'E-Lawyers Online';
+}
+
+.content > .container > .row > .col-md-8 {
+  margin-bottom: 20px;
+}
+
+a.anchor {
+  display: block;
+  position: relative;
+  top: -60px;
+  visibility: hidden;
+}
+
+.card {
+  border: 1px solid #bbb;
+  border-radius: 0px;
+}
+
+.border-top-1 {
+  border-top: 1px solid #bbb;
+}
+
+#main-nav {
+  box-shadow: 0 1px 7px -2px #333333;
+}
+
+#main-nav .active {
+  border-bottom: 2px solid #d9534f;
+}
+
+.social-link-fixed {
+  position: fixed;
+  bottom: 30px;
+  right: 0px;
+}
+
+.footer {
+  padding-top: 20px;
+  bottom: 0;
+  width: 100%;
+  min-height: 60px;
+}
+
+.padding-0 {
+  padding: 0px !important;
+}
+
+.navbar-nav .nav-item+.nav-item {
+  margin-left: 0px;
+}
+
+.dropdown-item, .nav-link {
+  font-size: 14px;
+}
+
+#contact-us-footer td {
+  border: 0px !important;
+}
+
+.text-logo {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.text-logo::before {
+  color: #2e3919;
+  content: 'e-lawyers '
+}
+
+.text-logo::after {
+  color: #dd5526;
+  content: 'online.com'
+}
+
+.site-links li {
+  padding: 5px;
+}
+
+.bootstrap-datetimepicker-widget table th.prev::after {
+  color: red !important;
+}
+.bootstrap-datetimepicker-widget table th.next::after {
+  color: red !important;
+}
+
+/*// Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575px) {
+
+  .logo {
+    height: 70px;
+  }
+
+}
+
+/*// Small devices (landscape phones, less than 768px)*/
+@media (max-width: 767px) { ... }
+
+/*// Medium devices (tablets, less than 992px)*/
+@media (max-width: 991px) { ... }
+
+/*// Large devices (desktops, less than 1200px)*/
+@media (max-width: 1199px) { ... }
+
+/*// Extra large devices (large desktops)*/
+/*// No media query since the extra-large breakpoint has no upper bound on its width*/

@@ -1,0 +1,12 @@
+<h4 class="margin-top-20 margin-bottom-20">
+  Online/Offline Legal Consultation Per Case/Project
+</h4>
+<div>
+  <p>This legal service is for clients who need a lawyer to handle a particular case or a particular project. The client can discuss the legal problem by providing the facts/details, objectives, and questions through our online form. After assessment and review of the relevant information, E-Lawyers Online will send a proposed Per Case/Project Retainer Agreement. Upon signing of the agreement and payment of the acceptance fee, E-Lawyers Online shall provide the legal advice, services, and representation to the client on a per case or per project basis.</p>
+  <p>Ang legal na serbisyo na ito ay para sa mga kliyente na nangangailangan ng abogado na haharap sa isang particular na kaso o proyekto. Meron dito na online form na magagamit mo para makapagbigay ng mga kwento ng mga pangyayari ng iyong problemang legal at mga detalye nito. Pagkatapos suriin ng E-Lawyers Online ang kaso, ang E-Lawyers Online ay magpapadala ng panukalang Case/Project Retainer Agreement. Pagkatapos na magkasundo at lagdaan ang Case/Project Retainer Agreement at nabayaran ang buwanang bayad, ang E-Lawyers Online ay magbibigay ng serbisyong legal at haharap sa nasabing kaso o proyekto.)</p>
+  Tips:                          
+  <ul>
+  <li>It will be useful for the client to write the complete facts, objectives, and questions regarding his/her legal problem using any word processor program (like Microsoft Word, Wordpad, or Notepad) for an easy cut-and-paste process. (Kung mahaba ang kwento ng mga pangyayari ng problemang legal, mas makakabuti na ito ay i-type muna sa word processor program (like Microsoft Word, Wordpad, or Notepad) at mag cut-and-paste ng natype na kwento)<br /> <br /></li>
+  <li>For any documents, which can be valuable for the case, clients can upload any Microsoft Word, Portable Document Format (PDF), or a scanned image (in JPEG format) for a more comprehensive legal advice from E-Lawyers Online. (Kung meron kayong papel o dokumento na parte o makakatulong sa inyong kaso o problemang legal, pwede itong i-scan at i-attach dito para makapagbigay ang E-Lawyers Online ng mas kumpleto at malawak na payong legal.)</li>
+  </ul>
+</div>
