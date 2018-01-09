@@ -34,7 +34,7 @@ class CorporatePartnershipInfo extends Model
 
     public function user()
     {
-          return $this->belongsTo('App\Modules\User\Models\User', 'id', 'user_id')->withTrashed();
+         return $this->belongsTo('App\Modules\User\Models\User', 'id', 'user_id')->withTrashed();
     }
 
     public function boardOfDirectors()
@@ -42,5 +42,9 @@ class CorporatePartnershipInfo extends Model
         return $this->hasMany('App\Modules\CorporatePartnership\Models\BoardOfDirector');
     }
 
+    public function stockholders()
+    {
+        return $this->hasMany('App\Modules\CorporatePartnership\Models\Stockholder');
+    }
 
 }

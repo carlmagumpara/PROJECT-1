@@ -52,8 +52,14 @@
 				],
 			],
 			'stockholder_type' => [
-				'Publicly Listed',
-				'Not Publicly Listed',
+				[ 
+					'type' => 'Publicly Listed', 
+					'label' => 'Top 10 Majority Stockholders',
+				],
+				[ 
+					'type' => 'Not Publicly Listed', 
+					'label' => 'Limited to 10-20 Stockholders',
+				],
 			],
 		],
 		'legal_services' => [

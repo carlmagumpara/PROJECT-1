@@ -188,8 +188,8 @@
                       <div class="text-center margin-top-30">
                         <h4>Board of Directors/Trustees/Partners</h4>
                       </div>
-                      <div class="margin-bottom-30 margin-top-30">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#board-of-directors-modal" data-type="add" data-action="{{ route('corporate-partnership.board-of-directors.add') }}">
+                      <div class="margin-top-30">
+                        <button data-table-type="Board" type="button" class="btn btn-primary" data-toggle="modal" data-target="#board-of-directors-modal" data-type="add" data-action="{{ route('corporate-partnership.board-of-directors.add') }}">
                           Add
                         </button>
                       </div>
@@ -199,16 +199,25 @@
                       <div class="margin-bottom-30 margin-top-30 text-center">
                         @for ($i = 0; $i < count(config('enum.corporate_partnership.stockholder_type')); $i++)
                           <label class="custom-control custom-radio">
-                            <input value="{{ config('enum.corporate_partnership.stockholder_type')[$i] }}" name="stockholder_type" type="radio" class="custom-control-input" {{ $corporatePartnershipInfo->stockholder_type == config('enum.corporate_partnership.stockholder_type')[$i] ?  'checked' : '' }}>
+                            <input value="{{ config('enum.corporate_partnership.stockholder_type')[$i]['type'] }}" name="stockholder_type" type="radio" class="custom-control-input" {{ $corporatePartnershipInfo->stockholder_type == config('enum.corporate_partnership.stockholder_type')[$i]['type'] ?  'checked' : '' }}>
                             <span class="custom-control-indicator"></span>
-                            <span class="custom-control-description">{{config('enum.corporate_partnership.stockholder_type')[$i]}}</span>
+                            <span class="custom-control-description">{{config('enum.corporate_partnership.stockholder_type')[$i]['type']}}
+                            ({{ config('enum.corporate_partnership.stockholder_type')[$i]['label'] }})
+                            </span>
                           </label>
                         @endfor
                       </div>
                       <div class="text-center margin-top-30">
                         <h4>Stockholders/Trustees/Partners</h4>
                       </div>
-
+                      <div class="margin-top-30">
+                        <button data-table-type="Stockholder" type="button" class="btn btn-primary" data-toggle="modal" data-target="#stockholders-modal" data-type="add" data-action="{{ route('corporate-partnership.stockholders.add') }}">
+                          Add
+                        </button>
+                      </div>
+                      <div data-render="{{ route('corporate-partnership.stockholders.render') }}" id="stockholders-table">
+                        @include('CorporatePartnership::partials.stockholders-table-partial')
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -228,6 +237,7 @@
   </div>
 </div>
 @include('CorporatePartnership::partials.board-of-directors-modal')
+@include('CorporatePartnership::partials.stockholders-modal')
 @include('CorporatePartnership::partials.delete-modal')
 @endsection
 @section('script')
@@ -262,6 +272,7 @@
             }
           });
           refreshBoardOfDirectorsTable();
+          refreshstockholdersTable();
           $('#loader').addClass('d-none');
         } 
       });
@@ -334,17 +345,104 @@
       });
     });
 
+    $('#stockholders-form').submit(function(e){
+      e.preventDefault();
+      var button = $(this).find('[type=submit]');
+      button.html('<i class="fa fa-spinner fa-spin"></i> PROCESSING...').addClass('disabled');
+      $('#loader').removeClass('d-none');
+      $.post($(this).attr('action'), $(this).serializeArray() , function(data){
+        var data = JSON.parse(data);
+        if (data.result == 'success') {
+          $('#stockholders-modal').modal('hide');
+          $.notify({
+            title: 'Success',
+            message: data.message
+          },{
+            allow_dismiss: true,
+            type: 'success',
+            delay: 3000,
+            newest_on_top: true,
+            placement: {
+              from: 'top',
+              align: 'right'
+            }
+          });
+          refreshstockholdersTable();
+        } else {
+          $.notify({
+            title: 'Error',
+            message: data.message
+          },{
+            allow_dismiss: true,
+            type: 'danger',
+            delay: 3000,
+            newest_on_top: true,
+            placement: {
+              from: 'top',
+              align: 'right'
+            }
+          });
+        }
+        button.text('SAVE').removeClass('disabled');
+        $('#loader').addClass('d-none');
+      }).fail(function(error){
+        if(error.readyState == 4) {
+          var errors = [];
+          $.each(error.responseJSON,function(key,value){
+            $.each(value,function(key,val) {
+              errors += '<li>'+val+'</li>';
+            });
+          });
+          $.notify({
+            title: 'Error',
+            message: '<ul>'+errors+'</ul>'
+          },{
+            z_index: 9999999,
+            type: 'danger',
+            delay: 3000,
+            newest_on_top: true,
+            placement: {
+              from: 'top',
+              align: 'right'
+            }
+          });
+          button.text('SUBMIT').removeClass('disabled');
+          $('#loader').addClass('d-none');
+        }
+      });
+    });
+
     $('#board-of-directors-modal').on('show.bs.modal', function (event) {
       var button = $(event.relatedTarget);
       var type = button.data('type');
       var modal = $(this);
       if (type == 'add') {
-        modal.find('.modal-title').text('Add');
+        modal.find('.modal-title').text('Add '+button.data('table-type'));
         modal.find('#board-of-directors-form').attr('action', button.data('action'));
       } else {
         $('#loader').removeClass('d-none');
-        modal.find('.modal-title').text('Edit');
+        modal.find('.modal-title').text('Edit '+button.data('table-type'));
         modal.find('#board-of-directors-form').attr('action', button.data('action'));
+        $.get(button.data('fetch'), function(data){
+          $.each(data, function(key, val){
+            modal.find('[name='+key+']').val(val);
+          });
+          $('#loader').addClass('d-none');
+        });
+      }
+    });
+
+    $('#stockholders-modal').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget);
+      var type = button.data('type');
+      var modal = $(this);
+      if (type == 'add') {
+        modal.find('.modal-title').text('Add '+button.data('table-type'));
+        modal.find('#stockholders-form').attr('action', button.data('action'));
+      } else {
+        $('#loader').removeClass('d-none');
+        modal.find('.modal-title').text('Edit '+button.data('table-type'));
+        modal.find('#stockholders-form').attr('action', button.data('action'));
         $.get(button.data('fetch'), function(data){
           $.each(data, function(key, val){
             modal.find('[name='+key+']').val(val);
@@ -424,12 +522,25 @@
       });
     });
 
+    $('#board-of-directors-modal, #stockholders-modal').on('hide.bs.modal', function (event) {
+      var modal = $(this);
+      modal.find('input[type=reset]').click();
+    });
+
     function refreshBoardOfDirectorsTable() {
       var board_of_directors_table = $('#board-of-directors-table');
       $.get(board_of_directors_table.attr('data-render'), function(data){
         board_of_directors_table.html(data);
       });
     }
+
+    function refreshstockholdersTable() {
+      var stockholders_table = $('#stockholders-table');
+      $.get(stockholders_table.attr('data-render'), function(data){
+        stockholders_table.html(data);
+      });
+    }
+
 
   });
 </script>

@@ -9,20 +9,24 @@ use App\Modules\User\Models\User;
 use App\Http\Requests\PersonalInfoRequest;
 use App\Http\Requests\CorporatePartnershipInfoRequest;
 use App\Http\Requests\BoardOfDirectorRequest;
-use App\Repositories\PersonalInfoRepository as PersonalInfo;
+use App\Http\Requests\StockholdersRequest;
+use App\Repositories\PersonalInfoRepository  as CorporatePartnershipRepresentativeInfo;
 use App\Repositories\CorporatePartnershipInfoRepository as CorporatePartnershipInfo;
 use App\Repositories\BoardOfDirectorRepository as BoardOfDirector;
+use App\Repositories\StockholderRepository as Stockholder;
 
 class CorporatePartnershipController extends Controller
 {
     public function __construct(
-        PersonalInfo $personalInfo,
+        CorporatePartnershipRepresentativeInfo $corporatePartnershipRepresentativeInfo,
         CorporatePartnershipInfo $corporatePartnershipInfo,
-        BoardOfDirector $boardOfDirector
+        BoardOfDirector $boardOfDirector,
+        Stockholder $stockholder
     ) {
-        $this->personalInfo = $personalInfo;
+        $this->corporatePartnershipRepresentativeInfo = $corporatePartnershipRepresentativeInfo;
         $this->corporatePartnershipInfo = $corporatePartnershipInfo;
         $this->boardOfDirector = $boardOfDirector;
+        $this->stockholder = $stockholder;
     }
     /**
      * Display a listing of the resource.
@@ -31,13 +35,13 @@ class CorporatePartnershipController extends Controller
      */
     public function corporatePartnershipRepresentativeInfo()
     {
-        $personalInfo = $this->personalInfo->getByAttributes(['id' => Auth::user()->personalInfo->id]);
-        return view('CorporatePartnership::corporate-partnership-representative-information.index', ['personalInfo' => $personalInfo]);
+        $corporatePartnershipRepresentativeInfo = $this->corporatePartnershipRepresentativeInfo->getByAttributes(['id' => Auth::user()->personalInfo->id]);
+        return view('CorporatePartnership::corporate-partnership-representative-information.index', ['corporatePartnershipRepresentativeInfo' => $corporatePartnershipRepresentativeInfo]);
     }
 
     public function corporatePartnershipRepresentativeInfoUpdate(PersonalInfoRequest $request)
     {
-        if ($this->personalInfo->update(Auth::user()->personalInfo->id, $request->all())) {
+        if ($this->corporatePartnershipRepresentativeInfo->update(Auth::user()->personalInfo->id, $request->all())) {
             return json_encode(array('result'=>'success', 'message'=>'Updated Successfuly!'));
         }
         return json_encode(array('result'=>'error', 'message'=>'Update Failed!'));
@@ -47,7 +51,7 @@ class CorporatePartnershipController extends Controller
     {
         $corporatePartnershipInfo = $this->corporatePartnershipInfo->getByAttributes(['id' => Auth::user()->corporatePartnershipInfo->id]);
 
-        return view('CorporatePartnership::corporate-partnership-information.index', ['corporatePartnershipInfo' => $corporatePartnershipInfo, 'boardOfDirectors' => $corporatePartnershipInfo->boardOfDirectors]);
+        return view('CorporatePartnership::corporate-partnership-information.index', ['corporatePartnershipInfo' => $corporatePartnershipInfo, 'boardOfDirectors' => $corporatePartnershipInfo->boardOfDirectors, 'stockholders' => $corporatePartnershipInfo->stockholders ]);
     }
 
     public function corporatePartnershipInfoUpdate(CorporatePartnershipInfoRequest $request)
@@ -68,12 +72,28 @@ class CorporatePartnershipController extends Controller
         return json_encode(array('result'=>'error', 'message'=>'Add Failed!'));
     }
 
+    public function stockholdersAdd(StockholdersRequest $request)
+    {
+        $request['corporate_partnership_info_id'] = Auth::user()->corporatePartnershipInfo->id;
+        $request['user_id'] = Auth::user()->id;
+        if ($this->stockholder->store($request->all())) {
+            return json_encode(array('result'=>'success', 'message'=>'Added Successfuly!'));
+        }
+        return json_encode(array('result'=>'error', 'message'=>'Add Failed!'));
+    }
+
+
     public function boardOfDirectorsUpdate(BoardOfDirectorRequest $request, $id)
     {
         if ($this->boardOfDirector->update($id, $request->all())) {
             return json_encode(array('result'=>'success', 'message'=>'Updated Successfuly!'));
         }
         return json_encode(array('result'=>'error', 'message'=>'Update Failed!'));
+    }
+
+    public function fetchStockholderInfo($id)
+    {
+        return $this->stockholder->getById($id);
     }
 
     public function fetchBoardInfo($id)
@@ -89,10 +109,33 @@ class CorporatePartnershipController extends Controller
         return json_encode(array('result'=>'error', 'message'=>'Delete Failed!'));
     }
 
+    public function stockholdersUpdate(StockholdersRequest $request, $id)
+    {
+        if ($this->stockholder->update($id, $request->all())) {
+            return json_encode(array('result'=>'success', 'message'=>'Updated Successfuly!'));
+        }
+        return json_encode(array('result'=>'error', 'message'=>'Update Failed!'));
+    }
+
+    public function stockholdersDelete($id)
+    {
+        if ($this->stockholder->destroy($id)) {
+            return json_encode(array('result'=>'success', 'message'=>'Deleted Successfuly!'));
+        }
+        return json_encode(array('result'=>'error', 'message'=>'Delete Failed!'));
+    }
+
     public function boardOfDirectorsRender()
     {
         $corporatePartnershipInfo = $this->corporatePartnershipInfo->getByAttributes(['id' => Auth::user()->corporatePartnershipInfo->id]);
         return view('CorporatePartnership::partials.board-of-directors-table-partial', ['boardOfDirectors' => $corporatePartnershipInfo->boardOfDirectors])->render();
     }
+
+    public function stockholdersRender()
+    {
+        $corporatePartnershipInfo = $this->corporatePartnershipInfo->getByAttributes(['id' => Auth::user()->corporatePartnershipInfo->id]);
+        return view('CorporatePartnership::partials.stockholders-table-partial', ['stockholders' => $corporatePartnershipInfo->stockholders])->render();
+    }
+
 
 }

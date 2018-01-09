@@ -1,4 +1,4 @@
-<div class="modal fade" id="board-of-directors-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="stockholders-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -7,7 +7,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="" method="post" id="board-of-directors-form">
+      <form action="" method="post" id="stockholders-form">
         <div class="modal-body">
           {{ csrf_field() }}
           <div class="form-group">
@@ -19,8 +19,16 @@
             <input class="form-control" type="text" name="nationality">
           </div>
           <div class="form-group">
-            <label for="address">Address</label>
-            <input class="form-control" type="text" name="address">
+            <label for="no_of_share">No. Of Share/Contibution</label>
+            <input class="form-control" type="number" name="no_of_share">
+          </div>
+          <div class="form-group">
+            <label for="subscribed_capital">Subscribed Capital</label>
+            <input class="form-control" type="text" name="subscribed_capital">
+          </div>
+          <div class="form-group">
+            <label for="paid_up_capital">Paid-up Capital</label>
+            <input class="form-control" type="text" name="paid_up_capital">
           </div>
         </div>
         <div class="modal-footer">

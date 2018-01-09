@@ -192,7 +192,6 @@
     $('#children-modal').on('hide.bs.modal', function (event) {
       var modal = $(this);
       modal.find('input[type=reset]').click();
-      $('#children-info-alert').empty();
     });
 
     function refreshTable() {

@@ -18,20 +18,20 @@
               <div class="col-md-4">
                 <div class="form-group">
                   <label for="first_name" class="control-label">First Name</label>
-                  <input id="first_name" type="text" class="form-control" name="first_name" value="{{ $personalInfo->first_name }}">
+                  <input id="first_name" type="text" class="form-control" name="first_name" value="{{ $corporatePartnershipRepresentativeInfo->first_name }}">
                   <div class="form-control-feedback text-danger d-none">* required</div>
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group">
                   <label for="middle_name" class="control-label">Middle Name</label>
-                  <input id="middle_name" type="text" class="form-control" name="middle_name" value="{{ $personalInfo->middle_name }}">
+                  <input id="middle_name" type="text" class="form-control" name="middle_name" value="{{ $corporatePartnershipRepresentativeInfo->middle_name }}">
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group">
                   <label for="last_name" class="control-label">Last Name</label>
-                  <input id="last_name" type="text" class="form-control" name="last_name" value="{{ $personalInfo->last_name }}">
+                  <input id="last_name" type="text" class="form-control" name="last_name" value="{{ $corporatePartnershipRepresentativeInfo->last_name }}">
                   <div class="form-control-feedback text-danger d-none">* required</div>
                 </div>
               </div>
@@ -40,7 +40,7 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label for="address_ph" class="control-label">Address (Philippines)</label>
-                  <textarea rows="2" class="form-control" name="address_ph" id="address_ph">{{ $personalInfo->address_ph }}</textarea>
+                  <textarea rows="2" class="form-control" name="address_ph" id="address_ph">{{ $corporatePartnershipRepresentativeInfo->address_ph }}</textarea>
                 </div>
               </div>
             </div>
@@ -48,7 +48,7 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label for="address_abroad" class="control-label">Address (Abroad)</label>
-                  <textarea rows="2" class="form-control" name="address_abroad" id="address_abroad">{{ $personalInfo->address_abroad }}</textarea>
+                  <textarea rows="2" class="form-control" name="address_abroad" id="address_abroad">{{ $corporatePartnershipRepresentativeInfo->address_abroad }}</textarea>
                 </div>
               </div>
             </div>
@@ -56,19 +56,19 @@
               <div class="col-md-4">
                 <div class="form-group">
                   <label for="telephone_no" class="control-label">Telephone No</label>
-                  <input id="telephone_no" type="text" class="form-control" name="telephone_no" value="{{ $personalInfo->telephone_no }}">
+                  <input id="telephone_no" type="text" class="form-control" name="telephone_no" value="{{ $corporatePartnershipRepresentativeInfo->telephone_no }}">
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group">
                   <label for="cellphone_no" class="control-label">Cellphone No</label>
-                  <input id="cellphone_no" type="text" class="form-control" name="cellphone_no" value="{{ $personalInfo->cellphone_no }}">
+                  <input id="cellphone_no" type="text" class="form-control" name="cellphone_no" value="{{ $corporatePartnershipRepresentativeInfo->cellphone_no }}">
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group">
                   <label for="email" class="control-label">E-Mail</label>
-                  <input id="email" type="email" class="form-control" name="email" value="{{ $personalInfo->email }}" readonly>
+                  <input id="email" type="email" class="form-control" name="email" value="{{ $corporatePartnershipRepresentativeInfo->email }}" readonly>
                 </div>
               </div>
             </div>
@@ -77,7 +77,7 @@
                 <div class="form-group birth_date">
                   <label for="birth_date">Birth Date</label>
                   <div class="input-group date">
-                    <input type="text" class="form-control no-margin" name="birth_date" id="birth_date" value="{{ $personalInfo->birth_date }}">
+                    <input type="text" class="form-control no-margin" name="birth_date" id="birth_date" value="{{ $corporatePartnershipRepresentativeInfo->birth_date }}">
                     <span class="input-group-addon">
                       <i class="fa fa-calendar" aria-hidden="true"></i>
                     </span>
@@ -88,7 +88,7 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="birth_place" class="control-label">Birth Place</label>
-                  <input id="birth_place" type="text" class="form-control" name="birth_place" value="{{ $personalInfo->birth_place }}">
+                  <input id="birth_place" type="text" class="form-control" name="birth_place" value="{{ $corporatePartnershipRepresentativeInfo->birth_place }}">
                 </div>
               </div>
             </div>
@@ -99,7 +99,7 @@
                   <select class="form-control" name="gender" id="gender">
                     <option value="">Select</option>
                     @for ($i = 0; $i < count(config('enum.gender')); $i++)
-                    <option value="{{ config('enum.gender')[$i] }}" {{ $personalInfo->gender ==  config('enum.gender')[$i] ? 'selected' : '' }}>{{ config('enum.gender')[$i] }}</option> 
+                    <option value="{{ config('enum.gender')[$i] }}" {{ $corporatePartnershipRepresentativeInfo->gender ==  config('enum.gender')[$i] ? 'selected' : '' }}>{{ config('enum.gender')[$i] }}</option> 
                     @endfor
                   </select>
                   <div class="form-control-feedback text-danger d-none">* required</div>
@@ -108,13 +108,13 @@
               <div class="col-md-4">
                 <div class="form-group">
                   <label for="age" class="control-label">Age</label>
-                  <input id="age" type="text" class="form-control" name="age" value="{{ $personalInfo->age }}" readonly>
+                  <input id="age" type="text" class="form-control" name="age" value="{{ $corporatePartnershipRepresentativeInfo->age }}" readonly>
                 </div>
               </div>
               <div class="col-md-5">
                 <div class="form-group">
                   <label for="citizenship" class="control-label">Citizenship</label>
-                  <input id="citizenship" type="text" class="form-control" name="citizenship" value="{{ $personalInfo->citizenship }}">
+                  <input id="citizenship" type="text" class="form-control" name="citizenship" value="{{ $corporatePartnershipRepresentativeInfo->citizenship }}">
                 </div>
               </div>
             </div>
@@ -125,7 +125,7 @@
                   <select class="form-control" name="education_attained" id="education_attained">
                     <option value="">Select</option>
                     @for ($i = 0; $i < count(config('enum.education_attained')); $i++)
-                    <option value="{{ config('enum.education_attained')[$i] }}" {{ $personalInfo->education_attained ==  config('enum.education_attained')[$i] ? 'selected' : '' }}>{{ config('enum.education_attained')[$i] }}</option> 
+                    <option value="{{ config('enum.education_attained')[$i] }}" {{ $corporatePartnershipRepresentativeInfo->education_attained ==  config('enum.education_attained')[$i] ? 'selected' : '' }}>{{ config('enum.education_attained')[$i] }}</option> 
                     @endfor
                   </select>
                 </div>
@@ -133,7 +133,7 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="school" class="control-label">School</label>
-                  <input id="school" type="text" class="form-control" name="school" value="{{ $personalInfo->school }}">
+                  <input id="school" type="text" class="form-control" name="school" value="{{ $corporatePartnershipRepresentativeInfo->school }}">
                 </div>
               </div>
             </div>
@@ -141,13 +141,13 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="company_work" class="control-label">Company/Work</label>
-                  <input id="company_work" type="text" class="form-control" name="company_work" value="{{ $personalInfo->company_work }}">
+                  <input id="company_work" type="text" class="form-control" name="company_work" value="{{ $corporatePartnershipRepresentativeInfo->company_work }}">
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="nature_of_business" class="control-label">Nature of Business</label>
-                  <input id="nature_of_business" type="text" class="form-control" name="nature_of_business" value="{{ $personalInfo->nature_of_business }}">
+                  <input id="nature_of_business" type="text" class="form-control" name="nature_of_business" value="{{ $corporatePartnershipRepresentativeInfo->nature_of_business }}">
                 </div>
               </div>
             </div>
@@ -155,7 +155,7 @@
               <div class="col-md-12">
                 <div class="form-group">
                   <label for="company_address" class="control-label">Company Address</label>
-                  <textarea rows="2" class="form-control" name="company_address" id="company_address">{{ $personalInfo->company_address }}</textarea>
+                  <textarea rows="2" class="form-control" name="company_address" id="company_address">{{ $corporatePartnershipRepresentativeInfo->company_address }}</textarea>
                 </div>
               </div>
             </div>
@@ -163,13 +163,13 @@
               <div class="col-md-4">
                 <div class="form-group">
                   <label for="work_position" class="control-label">Work Position</label>
-                  <input id="work_position" type="text" class="form-control" name="work_position" value="{{ $personalInfo->work_position }}">
+                  <input id="work_position" type="text" class="form-control" name="work_position" value="{{ $corporatePartnershipRepresentativeInfo->work_position }}">
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group">
                   <label for="work_duration" class="control-label">Work Duration</label>
-                  <input id="work_duration" type="text" class="form-control" name="work_duration" value="{{ $personalInfo->work_duration }}">
+                  <input id="work_duration" type="text" class="form-control" name="work_duration" value="{{ $corporatePartnershipRepresentativeInfo->work_duration }}">
                 </div>
               </div>
               <div class="col-md-4">
@@ -178,7 +178,7 @@
                   <select class="form-control" name="work_status" id="work_status">
                     <option value="">Select</option>
                     @for ($i = 0; $i < count(config('enum.work_status')); $i++)
-                    <option value="{{ config('enum.work_status')[$i] }}" {{ $personalInfo->work_status ==  config('enum.work_status')[$i] ? 'selected' : '' }}>{{ config('enum.work_status')[$i] }}</option> 
+                    <option value="{{ config('enum.work_status')[$i] }}" {{ $corporatePartnershipRepresentativeInfo->work_status ==  config('enum.work_status')[$i] ? 'selected' : '' }}>{{ config('enum.work_status')[$i] }}</option> 
                     @endfor
                   </select>
                 </div>

@@ -12,7 +12,7 @@
           {{ csrf_field() }}
           <div class="form-group">
             <label for="name">Child Name</label>
-            <input class="form-control" type="text" name="name" placeholder="Child Name">
+            <input class="form-control" type="text" name="name">
           </div>
           <div class="form-group">
             <label for="gender">Gender</label>
@@ -34,11 +34,11 @@
           </div>
           <div class="form-group">
             <label for="school">School</label>
-            <input class="form-control" type="text" name="school" placeholder="School">
+            <input class="form-control" type="text" name="school">
           </div>
           <div class="form-group">
             <label for="name">Grade Year</label>
-            <input class="form-control" type="text" name="grade_year" placeholder="Grade Year">
+            <input class="form-control" type="text" name="grade_year">
           </div>
         </div>
         <div class="modal-footer">
