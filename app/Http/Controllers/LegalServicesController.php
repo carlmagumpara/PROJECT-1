@@ -33,7 +33,7 @@ class LegalServicesController extends Controller
 
      public function legalCases()
     {
-      $legalCases = $this->legalCase->getAllByAttributes(['user_id' => Auth::user()->id], null,null);
+      $legalCases = $this->legalCase->getAllByAttributes(['user_id' => Auth::user()->id],'created_at', 'desc');
       return view('legal-services.legal-cases.index', ['legalCases' => $legalCases]);
     }
 

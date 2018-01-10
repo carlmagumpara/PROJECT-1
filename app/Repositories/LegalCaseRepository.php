@@ -19,7 +19,7 @@ class LegalCaseRepository extends BaseRepository
         return $this->model->all();
     }
 
-    public function getAllByAttributes(array $attributes, $orderBy = '', $sort = '')
+    public function getAllByAttributes(array $attributes, $orderBy = null, $sort = null)
     {
         return $this->model->where($attributes)->orderBy($orderBy, $sort)->get();
     }
