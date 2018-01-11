@@ -115,15 +115,16 @@ class RegisterController extends Controller
             ]);
         }
 
-        // $emailInfo = [
-        //     'name' => $data['first_name'].' '.$data['last_name'],
-        //     'email' => $data['email'],
-        //     'link' => route('auth.verified-account', $user->activation_code),
-        // ];
+        $emailInfo = [
+            'name' => $data['first_name'].' '.$data['last_name'],
+            'email' => $data['email'],
+            'link' => route('auth.verified-account', $user->activation_code),
+        ];
 
-        // Mail::send('Admin::emails.lawyer.verification', $emailInfo, function($message) use ($data){
-        //     $message->to($emailInfo['mail'], $emailInfo['name'])->subject('Credentials Verification - E-Lawyers Online');
-        // });
+        Mail::send('layouts.mail.verification-code', $emailInfo, function($message) use ($data){
+            $message->from('info@e-lawyersonline.com', 'E-LawyersOnline.com');
+            $message->to($data['email'], $data['first_name'].' '.$data['last_name'])->subject('Credentials Verification - E-Lawyers Online');
+        });
 
 
     }
