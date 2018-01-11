@@ -32,7 +32,7 @@
                   <td>{{ $legalCase->legalCaseDetail->status }}</td>
                   <td>{{ $legalCase->created_at->format('F d, Y h:i A') }}</td>
                   <td>N/A</td>
-                  <td>N/A</td>
+                  <td>{{ $legalCase->payment->status }}</td>
                   <td>
                     <button type="button" class="btn btn-info">View</button>
                   </td>

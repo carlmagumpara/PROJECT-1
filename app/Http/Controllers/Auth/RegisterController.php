@@ -10,6 +10,7 @@ use App\Modules\Personal\Models\ChildrenInfo;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Mail;
 
 class RegisterController extends Controller
 {
@@ -50,7 +51,7 @@ class RegisterController extends Controller
     {
         $this->validator($request->all())->validate();
         if (isset($request['end-user-agreement'])) {
-            $this->create($request->all());
+            $user = $this->create($request->all());
             return json_encode(array('result'=>'success', 'message'=>'Registered Successfuly!'));
         } else {
             return json_encode(array('result'=>'show_agreement', 'message'=>'Show End User Agreement Modal!'));
@@ -113,6 +114,18 @@ class RegisterController extends Controller
                 'user_id' => $user->id,
             ]);
         }
+
+        // $emailInfo = [
+        //     'name' => $data['first_name'].' '.$data['last_name'],
+        //     'email' => $data['email'],
+        //     'link' => route('auth.verified-account', $user->activation_code),
+        // ];
+
+        // Mail::send('Admin::emails.lawyer.verification', $emailInfo, function($message) use ($data){
+        //     $message->to($emailInfo['mail'], $emailInfo['name'])->subject('Credentials Verification - E-Lawyers Online');
+        // });
+
+
     }
 
     public function verifiedAcount($code) 

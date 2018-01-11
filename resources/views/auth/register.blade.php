@@ -14,9 +14,9 @@
         </div>
         <div class="card">
           <div class="card-body">
-            <h1 class="margin-bottom-20">
+            <h3 class="margin-bottom-20">
               <strong>Sign up</strong>
-            </h1>
+            </h3>
             <div id="register-alert"></div>
             <form role="form" method="POST" action="{{ url('/register') }}" id="register-form">
                 {{ csrf_field() }}

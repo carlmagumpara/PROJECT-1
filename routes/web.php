@@ -27,8 +27,11 @@ Route::group(['prefix' => 'legal-services'], function () {
 });
 
 // Legal Cases
-Route::group(['prefix' => 'legal-cases'], function () {
+Route::group(['prefix' => 'legal-cases', 'middleware' => ['web', 'auth']], function () {
 	Route::get('/', ['uses' => 'LegalServicesController@legalCases', 'as' => 'legal-services.legal-cases.index'])->middleware('auth');
-	Route::get('/online-legal-consultation', ['uses' => 'LegalServicesController@onlineLegalConsultation', 'as' => 'legal-services.legal-cases.online-legal-consultation'])->middleware('auth');
-	Route::post('/online-legal-consultation/new', ['uses' => 'LegalServicesController@newLegalCase', 'as' => 'legal-services.legal-cases.online-legal-consultation.new'])->middleware('auth');
+	Route::get('/online-legal-consultation', ['uses' => 'LegalServicesController@onlineLegalConsultation', 'as' => 'legal-services.legal-cases.online-legal-consultation']);
+	Route::post('/online-legal-consultation/new', ['uses' => 'LegalServicesController@newLegalCase', 'as' => 'legal-services.legal-cases.online-legal-consultation.new']);
+
+	Route::get('/letter-of-intent/{legal_problem_id}', ['uses' => 'LegalServicesController@letterOfIntent', 'as' => 'legal-services.legal-cases.online-legal-consultation.leter-of-intent']);
+
 });

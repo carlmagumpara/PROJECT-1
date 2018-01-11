@@ -30,4 +30,10 @@ class LegalCase extends Model
         return $this->hasOne('App\LegalCaseType');
     }
 
+    public function payment()
+    {
+        return $this->hasOne('App\Payment', 'case_id', 'id');
+    }
+
+
 }
