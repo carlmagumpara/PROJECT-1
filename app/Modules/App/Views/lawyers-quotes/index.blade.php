@@ -8,9 +8,9 @@
     <div class="col-md-8">
       <div class="card margin-bottom-20">
         <div class="card-body">
-          <h2 class="margin-bottom-20">
+          <h3 class="margin-bottom-20">
             <strong>Lawyer's Quotes</strong>
-          </h2>
+          </h3>
           <div class="margin-bottom-30">
             <div style="float:left; padding:0 25px 0 0;"><img src="{{ asset('img/holmes_pic.jpg') }}" width="130" height="150" border="1" align="texttop" /></div>
             <h3 class="text-danger margin-bottom-10">

@@ -27,7 +27,7 @@
                     <td>
                         <div style="width: 100%; background-color: #f3ebe5; font-family: Arial, Helvetica, sans-serif; margin: 0 auto;">
                             <div align="center" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('') center; background-size: cover; width: 100%; height: auto;">
-                                <img src="" alt="User" style="padding: 20px 0px; width: 30%; height: auto;">
+                                <img src="{{ asset('img/logo.png') }}" alt="User" style="padding: 20px 0px; width: 30%; height: auto;">
                             </div>
                         </div>
                     </td>
@@ -38,9 +38,8 @@
                             <tr>
                                 <td style="padding: 10px; text-align: left;">
                                     <p style="font-size: 14px; margin-bottom: 10px; font-size: 21px; font-weight: bold; margin-bottom: 18px;">Dear {!! $name !!},</p>
-
-                                    <p style="font-size: 14px; margin-bottom: 10px;">Congratulations! You successfully created your LexMeet account as a "Client".</p>
-                                    <p style="font-size: 14px; margin-bottom: 10px;">To complete the sign-up process and verify your account, please click here.:</p>
+                                    <p style="font-size: 14px; margin-bottom: 10px;">Congratulations! Your account has been successfully created.</p>
+                                    <p style="font-size: 14px; margin-bottom: 10px;">To complete the sign-up process and verify your account, please click here:</p>
                                     <center>
                                         <table border="0" cellspacing="0" cellpadding="0">
                                                 <tr>
@@ -50,12 +49,100 @@
                                                 </tr>
                                         </table>
                                     </center>
-                                    <p style="font-size: 14px; margin-bottom: 10px;">If the button doesn't work, try <a href="{!! $link !!}">{!! $link !!}</a></p>
-                                    <p style="font-size: 14px; margin-bottom: 10px;">The activation code for your account is : <b></b></p>
-                                    <p style="font-size: 14px; margin-bottom: 10px;">After verification of account, you can now proceed with the online legal consultation by following these steps (Maaari na po kayo magkonsulta sa pamamagitan ng pagsunod sa mga hakbang na ito):</p>
-                                    <p style="font-size: 14px; margin-bottom: 10px;">
-                                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dapibus ex sed velit placerat mollis. Integer eget elementum magna, quis ornare risus. Etiam sed lectus id nisl rutrum maximus. Pellentesque efficitur augue ac augue aliquam sollicitudin. Proin congue laoreet consequat. Cras felis erat, pulvinar sed leo eget, dictum lobortis turpis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu eros eget dui dictum tristique at sed risus. Sed molestie magna nisl, volutpat commodo mi consectetur ac. Praesent augue eros, finibus id nibh ut, finibus dapibus tellus.
-                                    </p>
+                                    <p style="font-size: 14px; margin-bottom: 10px;">After verification of account, you can now proceed with the online legal consultation by following these steps (Maaari na po kayo magkonsulta sa pamamagitan ng pagsunod sa mga hakbang na ito): </p>
+                                    <ol>
+                                        <li>
+                                            <p style="font-size: 14px; margin-bottom: 10px;">
+                                                Click the "SUBMIT LEGAL QUERY" or "TRY OUR ONLINE LEGAL CONSULTATION" button in the main page (Pindutin ang "Online Legal Consultation Page" o "Try Our Online Legal Consultation" na nasa paunang pahina ng website);
+                                            </p>
+                                        </li>
+
+                                        <li>
+                                            <p style="font-size: 14px; margin-bottom: 10px;">
+                                            You will be asked to LOGIN your email address and password for purposes of security and confidentiality. If you do not have this yet, please register first and create an account in the Main Page. (Kayo po ay kailangang maglagay ng email address at password para po sa seguridad at pagka konpidensiyal ng pangsangguning legal. Kung wala po kayo nito, kayo po muna ay magpatala o gumawa ng account. Ito po ang link <a href="{{ route('register') }}">https://e-lawyersonline.com/register</a> );
+                                            </p>
+                                        </li>
+
+                                        <li>
+                                            <p style="font-size: 14px; margin-bottom: 10px;">
+                                                Upon reaching the Online Legal Consultation Page, click "AVAIL LEGAL SERVICE" button (Kayo po ay pupunta sa Online Consultation Page at may makikita kayo na button na "AVAIL LEGAL SERVICE", ito po ay pindutin nyo);
+                                            </p>
+                                        </li>
+
+
+                                        <li>
+                                            <p style="font-size: 14px; margin-bottom: 10px;">
+                                                Select the button from the 5 types of services such as (Pumili po sa mga sumusunod na serbisyong legal na gusto niyo):
+                                            </p>
+                                            <ol type="A">
+                                                <li>
+                                                    "PER QUERY" if you want a written/email legal consultation (Kung gusto niyo po ng konsultang legal at mga kasagutan sa inyong tanong na ipapadala sa inyong email); or
+                                                </li>
+                                                <li>
+                                                    "VIDEO CONFERENCE" if you want a written and videoconference consultation (Kung gusto niyo po ng konsultang legal at mga kasagutan sa inyong tanong na ipapadala sa inyong email at magkaroon ng pag-uusap sa abogado sa iba pang katanungan sa pamamagitan ng webcam); or
+                                                </li>
+                                                <li>
+                                                    "OFFICE CONFERENCE" if you want a written and personal consultation(Kung gusto niyo po ng konsultang legal at mga kasagutan sa inyong tanong na ipapadala sa inyong email at magkaroon ng personal na pakikipag-uusap sa abogado sa iba pang katanungan); or
+                                                </li>
+                                                <li>
+                                                    "PER CASE/PROJECT RETAINER" if you want us to handle your case/project (Kung gusto niyo po na hawakan naming ang inyong kaso/proyekto); or
+                                                </li>
+                                                <li>
+                                                    "MONTHLY RETAINER" if you want us to be your lawyer for monthly services (Kung gusto niyo po na mayroon kayong sariling abogado para sa konsultang legal sa buong buwan).
+                                                </li>
+                                            </ol>
+                                        </li>
+
+                                        <li>
+                                            <p style="font-size: 14px; margin-bottom: 10px;">
+                                                Click "SUBMIT button in Client’s Letter of Intent (Pindutin po ang “SUBMIT”);
+                                            </p>
+                                        </li>
+
+
+                                        <li>
+                                            <p style="font-size: 14px; margin-bottom: 10px;">
+                                                Select the type of legal problem in "MY LEGAL PROBLEM IS" (Pumili ng isang problemang legal sa "MY LEGAL PROBLEM IS");
+                                            </p>
+                                        </li>
+
+
+                                        <li>
+                                            <p style="font-size: 14px; margin-bottom: 10px;">
+                                                Type or Cut and Paste the facts of your legal problem in MY LEGAL PROBLEM IS and/or attach documents, pictures or videos, if any (Ilagay po ang buong kuwento ng mga pangyayari ng iyong problemang legal at kung meron po kayong dokumento o larawan o video ay isama niyo dito);
+                                            </p>
+                                        </li>
+
+
+                                        <li>
+                                            <p style="font-size: 14px; margin-bottom: 10px;">
+                                                Type or Cut and Paste the list of LIST OF OBJECTIVES and LIST OF QUESTIONS, and SUBMIT it (Ilagay po ang lahat ng inyong gustong mangyari o kagustuhan at lahat ng inyong mga tanong);
+                                            </p>
+                                        </li>
+
+                                        <li>
+                                            <p style="font-size: 14px; margin-bottom: 10px;">
+                                                Then, ACCEPT the Online Legal Consultation Agreement (Tanggapin po ang Online Legal Consultation Agreement);
+                                            </p>
+                                        </li>
+
+                                        <li>
+                                            <p style="font-size: 14px; margin-bottom: 10px;">
+                                                Select the method of payment in the Payment Page (Pumili ng paraan ng pagbabayad).
+                                            </p>
+                                        </li>
+
+                                        <li>
+                                            <p style="font-size: 14px; margin-bottom: 10px;">
+                                            Upon completion of the payment form, we will send to you by email our legal advice and answers. For clients who obtained videoconference or office conference, the conference will be held after the receipt of our intial legal advice (Pagnatapos na po ang pagbabayad, ipapadala po namin ang aming mga kasagutan at legal na hakbang para inyong problemang legal. (Para sa mga kumuha ng videoconference or office conference, ang konperensiya ay gaganapin pagkatapos po matanggap ang aming mga kasagutan at legal na hakbang para inyong problemang legal).
+                                            </p>
+                                        </li>
+                                    </ol>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; text-align: left;">
+                                    <p style="font-size: 14px; margin-bottom: 10px;">Thank you. If you have any question, please feel free to email us at attyvalderama@e-lawyersonline.com.</p>
                                 </td>
                             </tr>
                             <tr>

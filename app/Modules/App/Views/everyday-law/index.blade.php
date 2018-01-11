@@ -8,9 +8,9 @@
     <div class="col-md-8">
       <div class="card margin-bottom-20">
         <div class="card-body">
-          <h2 class="margin-bottom-20">
+          <h3 class="margin-bottom-20">
             <strong>Everyday Law</strong>
-          </h2>
+          </h3>
           <h4 class="margin-bottom-20">{{ $post->title }}</h4>
           {!! $post->body !!}
         </div>

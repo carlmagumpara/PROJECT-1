@@ -8,7 +8,7 @@
     <div class="col-md-8">
       <div class="card margin-bottom-20">
         <div class="card-body">
-          <h2 class="margin-bottom-20"><strong>Law and Society</strong></h2>
+          <h3 class="margin-bottom-20"><strong>Law and Society</strong></h3>
           <div style="padding:0 25px 25px 0;" class="float-left">
             <img src="{{ asset('img/lawandsociety_pic.jpg') }}" width="250" height="184"/>
           </div>

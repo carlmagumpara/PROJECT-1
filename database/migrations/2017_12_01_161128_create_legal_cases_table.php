@@ -16,7 +16,7 @@ class CreateLegalCasesTable extends Migration
         Schema::create('legal_cases', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->integer('type')->nullable();
+            $table->string('legal_problem');
             $table->enum('confirmed', ['Yes', 'No'])->default('No');
             $table->enum('status', ['Active', 'Not Active'])->default('Active');
             $table->timestamps();

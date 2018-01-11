@@ -8,9 +8,9 @@
     <div class="col-md-12">
       <div class="card margin-bottom-20">
         <div class="card-body">
-          <h2 class="margin-bottom-20">
+          <h3 class="margin-bottom-20">
             <strong>Online Legal Consultation</strong>
-          </h2>
+          </h3>
           <p class="lead margin-bottom-30">
           	The Online Legal Consultation Service offers you the most convenient way to start an attorney-client relationship by discussing all your legal problems online and choosing from the five (5) types of online legal service most preferable to 
           </p>

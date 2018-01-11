@@ -8,9 +8,9 @@
     <div class="col-md-8">
       <div class="card margin-bottom-20">
         <div class="card-body">
-          <h2 class="margin-bottom-20">
+          <h3 class="margin-bottom-20">
             <strong>Our Services</strong>
-          </h2>
+          </h3>
           <div class="row">
             <div class="col-md-3">
               <img src="{{ asset('img/ourservices_pic.jpg') }}" class="img-responsive" />

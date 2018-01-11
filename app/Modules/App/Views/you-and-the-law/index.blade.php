@@ -8,9 +8,9 @@
     <div class="col-md-8">
       <div class="card margin-bottom-20">
         <div class="card-body">
-          <h2 class="margin-bottom-20">
+          <h3 class="margin-bottom-20">
             <strong>You & the Law</strong>
-          </h2>
+          </h3>
           <div style="padding:0 25px 25px 0;" class="float-left">
             <img src="{{ asset('img/everydaylaw_pic.jpg') }}" width="160" />
           </div>

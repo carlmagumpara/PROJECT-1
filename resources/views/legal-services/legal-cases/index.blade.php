@@ -8,10 +8,9 @@
     <div class="col-md-12">
       <div class="card margin-bottom-20">
         <div class="card-body">
-          <h2 class="margin-bottom-20">
+          <h3 class="margin-bottom-20">
             <strong>My Legal Cases</strong>
-          </h2>
-
+          </h3>
           <table class="table table-striped table-hover table-bordered margin-top-30">
             <thead class="table-info">
               <tr>

@@ -8,9 +8,9 @@
     <div class="col-md-8">
       <div class="card margin-bottom-20">
         <div class="card-body">
-          <h2 class="margin-bottom-20">
+          <h3 class="margin-bottom-20">
             <strong>Contact Us</strong>
-          </h2>
+          </h3>
           <img src="{{ asset('img/vlo.jpg') }}" class="img-fluid margin-bottom-20" />
           <table class="table table-sm">
             <tbody>

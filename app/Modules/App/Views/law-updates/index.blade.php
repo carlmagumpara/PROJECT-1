@@ -8,7 +8,7 @@
     <div class="col-md-8">
       <div class="card margin-bottom-20">
         <div class="card-body">
-          <h2 class="margin-bottom-20"><strong>Law Updates</strong></h2>
+          <h3 class="margin-bottom-20"><strong>Law Updates</strong></h3>
           <div style="float:left;">
             <h3 class="margin-bottom-20"><a href="{{ route('app.e-legal-news.index') }}" target="_self" class="text-danger">E-Legal News</a></h3>
             <div style="float:left; padding:0 25px 25px 0;"><img src="{{ asset('img/lawupdates.jpg') }}" width="250" height="172" border="0" align="texttop" /></div>

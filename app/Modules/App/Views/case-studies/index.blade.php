@@ -8,9 +8,9 @@
     <div class="col-md-8 margin-bottom-20">
       <div class="card">
         <div class="card-body">
-          <h2 class="margin-bottom-20">
+          <h3 class="margin-bottom-20">
             <strong>Case Studies</strong>
-          </h2>
+          </h3>
           <div style="float:left; padding:0 25px 50px 5px;"><img src="{{ asset('img/casestudy_pic.jpg') }}" width="250" height="150" border="0" /></div>
           <h3>&#8220;Swipe Your Credit Card Tears Away: The Case of Reduced Credit Card Interest Rate and Penalty Charge&#8221;</h3>
           <p>It has been a common conversation among credit card holders the harsh interest rate as well as the penalty charge being imposed against them by credit card companies. With the recent ruling of the Supreme Court in the case entitled <em><strong>&quot;Ilenea Dr. Macalinao, petitioner, vs. Bank of Philippine Islands, respondent&quot;</strong></em>, docketed as G.R. No. 174590 and promulgated on September 17, 2009, it is now settled that an imposition by credit companies of 3% interest rate per month and a 3% penalty charge per month is invalid for being unconscionable or <em>&quot;</em>unreasonably excessive.<em>&quot;</em> This is the gist of the Supreme Court decision:</p>

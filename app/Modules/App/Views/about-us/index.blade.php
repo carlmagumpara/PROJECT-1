@@ -8,7 +8,7 @@
     <div class="col-md-8">
       <div class="card margin-bottom-20">
         <div class="card-body">
-          <h2 class="margin-bottom-20"><strong>About  Us</strong></h2>
+          <h3 class="margin-bottom-20"><strong>About  Us</strong></h3>
           <p>This  website is created not for lawyers but for ordinary people who wants to be  knowledgeable and guided by the law. This is especially created for our Overseas Filipinos (OFs) who  continuously struggle to earn amidst being away from their loved ones and to  Foreign Investors who trust that there are opportunities here in the  Philippines and help boost our economy and generate jobs for Filipinos.</p>
           <h3 class="margin-bottom-20">Brief  History</h3>
           <p><strong><a href="{{ route('app.index') }}" target="_self">E-Lawyers Online</a></strong> is the online legal consultation platform of Valderama Law Office. This means you can access legal advice and documents online. This is new in the Philippines but has been  existing in other countries. Atty. Marlon P. Valderama is the one behind this  very accesible virtual law office. A virtual law  office (VLO) is a professional law practice that exists online through a secure  portal and is accessible to the client and the attorney anywhere that have  access the Internet. A virtual law office allows for secure personal communication  between an online client and his or her virtual attorney. <br /></p>

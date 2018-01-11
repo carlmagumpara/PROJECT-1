@@ -13,9 +13,9 @@
     <div class="col-md-8">
       <div class="card margin-bottom-20">
         <div class="card-body">
-          <h2 class="margin-bottom-30">
+          <h3 class="margin-bottom-30">
             <strong>Our Online Legal Services</strong>
-          </h2>
+          </h3>
           <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
             <a name="per-query" class="anchor">&nbsp;</a>
             @include('legal-services.partials.per-query')

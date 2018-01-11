@@ -13,9 +13,9 @@
     <div class="col-md-8">
       <div class="card margin-bottom-20">
         <div class="card-body">
-          <h2 class="margin-bottom-20">
+          <h3 class="margin-bottom-20">
             <strong>Initial Legal Assessment</strong>
-          </h2>
+          </h3>
           <div>
           <p>This initial legal assessment/study page is only for a general knowledge of the law and limited assessment of your legal problem/question FREE OF CHARGE based on the general and incomplete facts given to E-Lawyers Online. You agree not to copy, reproduce or otherwise publish our initial assessment without E-Lawyers Online consent. This assessment shall not be construed as lawyer-client relationship between you and E-Lawyers Online and the same is for personal information purposes only. If you want a complete and extensive assessment of your legal problem/question or complete and extensive legal advice, please select from any of our five (5) kinds of online legal services.</p>
           <p>(Itong paunang pantantiya o pag-aaral na pahina ay para lang sa malawak na kaalaman sa batas at limitadong pantantiya at pagsusuri ng iyong problemang legal o katanungan na WALANG BAYAD base sa hindi detalyadong paglalahad ng mga pangyayari na iyong binigay sa E-Lawyers Online. Ikaw ay pumapayag na ang paunang pagsusuri na ito ay hindi kokopyahin o ilalathala kaninuman ng walang nakasulat na pahintulot ng E-Lawyers Online. Ang paunang pagsusuri na ito ay hindi nangangahulugan ng pagkakaroon ng relasyon bilang abogado at kliyente sa pagitan mo at ng E-Lawyers Online at ang mga ito ay para sa iyong kaalaman lamang. Kung gusto mo ng kumpleto at malawakang pagsusuri o pag-aaral ng iyong probleman legal o kumpleto at malawakang paying legal, maaring pumili ka sa mga limang (5) online serbisyo namin.)</p>

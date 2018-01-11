@@ -21,7 +21,13 @@ class LegalCaseDetail extends Model
 
     public function legalCase()
     {
-          return $this->belongsTo('App\LegalCase', 'id', 'legal_case_id')->withTrashed();
+          return $this->belongsTo('App\LegalCase', 'legal_case_id', 'id');
     }
+
+    public function legalService()
+    {
+        return $this->hasOne('App\LegalService', 'name', 'legal_service');
+    }
+
 
 }

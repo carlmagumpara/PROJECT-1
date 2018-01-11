@@ -10,7 +10,7 @@ class LegalCase extends Model
 
     protected $fillable = [
             'user_id',
-            'type',
+            'legal_problem',
             'confirmed',
             'status',
     ];

@@ -12,4 +12,5 @@ class LegalService extends Model
         'name',
         'fee',
     ];
+
 }

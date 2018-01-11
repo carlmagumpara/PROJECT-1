@@ -31,7 +31,10 @@ Route::group(['prefix' => 'legal-cases', 'middleware' => ['web', 'auth']], funct
 	Route::get('/', ['uses' => 'LegalServicesController@legalCases', 'as' => 'legal-services.legal-cases.index'])->middleware('auth');
 	Route::get('/online-legal-consultation', ['uses' => 'LegalServicesController@onlineLegalConsultation', 'as' => 'legal-services.legal-cases.online-legal-consultation']);
 	Route::post('/online-legal-consultation/new', ['uses' => 'LegalServicesController@newLegalCase', 'as' => 'legal-services.legal-cases.online-legal-consultation.new']);
+	Route::get('/letter-of-intent/{legal_problem_id}', ['uses' => 'LegalServicesController@letterOfIntent', 'as' => 'legal-services.legal-cases.leter-of-intent']);
+  
+  Route::get('/legal-problem/{legal_problem_id}', ['uses' => 'LegalServicesController@legalProblem', 'as' => 'legal-services.legal-cases.legal-problem']);
 
-	Route::get('/letter-of-intent/{legal_problem_id}', ['uses' => 'LegalServicesController@letterOfIntent', 'as' => 'legal-services.legal-cases.online-legal-consultation.leter-of-intent']);
+  Route::post('/legal-problem/{legal_problem_id}/update', ['uses' => 'LegalServicesController@legalProblemPost', 'as' => 'legal-services.legal-cases.legal-problem.post']);
 
 });
