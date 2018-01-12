@@ -27,11 +27,11 @@
             <small>
               *You can prepare your summary of facts in Microsoft Word then copy and paste in this text area.
             </small>
-            <div class="margin-bottom-30 margin-top-30 text-center">
-              <a href="{{ route('legal-services.legal-cases.legal-problem', $legalCaseDetails->legal_case_id) }}" class="btn btn-secondary margin-left-10 margin-right-10">
+            <div class="margin-bottom-30 margin-top-30">
+              <a href="{{ route('legal-services.legal-cases.legal-problem', $legalCaseDetails->legal_case_id) }}" class="btn btn-secondary margin-left-5 margin-right-5">
                 BACK
               </a>
-              <button type="submit" class="btn btn-primary margin-left-10 margin-right-10">
+              <button type="submit" class="btn btn-primary margin-left-5 margin-right-5">
                 NEXT
               </button>
             </div>

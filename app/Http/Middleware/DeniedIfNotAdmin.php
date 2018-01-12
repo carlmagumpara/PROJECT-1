@@ -16,7 +16,7 @@ class DeniedIfNotAdmin
     public function handle($request, Closure $next, $guard = 'admins')
     {
         if (! \Auth::guard($guard)->check()) {
-            return response("Access denied", 403);
+            return redirect('/admin/login');
         }
         return $next($request);
     }

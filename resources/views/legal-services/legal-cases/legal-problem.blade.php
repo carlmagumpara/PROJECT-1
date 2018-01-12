@@ -29,8 +29,8 @@
                 </div>
               @endforeach
             </div>
-            <div class="margin-bottom-30 margin-top-30 text-center">
-              <button type="submit" class="btn btn-primary margin-left-10 margin-right-10">
+            <div class="margin-bottom-30 margin-top-30">
+              <button type="submit" class="btn btn-primary margin-left-5 margin-right-5">
                 NEXT
               </button>
             </div>

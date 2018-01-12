@@ -59,6 +59,13 @@ class LoginController extends Controller
         return Auth::guard('admins');
     }
 
+    public function login(Request $request){
+        if(Auth::guard('admins')->attempt(['email' => $request->email, 'password' => $request->password])){
+            return redirect('/admin/dashboard');
+        }
+        return json_encode(array('result'=>'error', 'message'=>'Login Failed!'));
+    }
+
     /**
      * Log the user out of the application.
      *

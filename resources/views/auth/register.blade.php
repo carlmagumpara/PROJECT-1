@@ -17,7 +17,6 @@
             <h3 class="margin-bottom-20">
               <strong>Sign up</strong>
             </h3>
-            <div id="register-alert"></div>
             <form role="form" method="POST" action="{{ url('/register') }}" id="register-form">
                 {{ csrf_field() }}
                 <div class="form-group">

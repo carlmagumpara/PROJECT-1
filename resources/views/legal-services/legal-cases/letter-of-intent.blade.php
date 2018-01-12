@@ -13,7 +13,7 @@
           </h3>
           @if ($legalCaseDetails->legalService->name == 'Per Query')
             <p>
-              {{ $legalCaseDetails->created_at->format('F d, Y') }}
+              {{ $legalCaseDetails->legalCase->created_at->format('F d, Y') }}
             </p>
             <p>
               I, {{ Auth::user()->personalInfo->first_name.' '.Auth::user()->personalInfo->last_name }}, with registered e-mail address of {{ Auth::user()->email }}, of legal age, hereby intends to obtain from E-Lawyers Online your service of online legal consultation via E-Mail or Written Query.
@@ -24,9 +24,11 @@
             <p>
               Respectfully submitted.
             </p>
-            <a href="{{ route('legal-services.legal-cases.legal-problem', $legalCaseDetails->legal_case_id) }}" class="btn btn-primary">
-              SUBMIT 
-            </a>
+            <div class="margin-bottom-30 margin-top-30">
+              <a href="{{ route('legal-services.legal-cases.legal-problem', $legalCaseDetails->legal_case_id) }}" class="btn btn-primary">
+                SUBMIT 
+              </a>
+            </div>
           @endif
         </div>
       </div>

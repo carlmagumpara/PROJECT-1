@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\LegalProblemRequest;
 use App\Http\Requests\SummaryOfFactsRequest;
+use App\Http\Requests\ObjectiveAndQuestionRequest;
 use App\Modules\User\Models\User;
 use Auth;
 use App\Repositories\PaymentRepository as Payment;
@@ -36,8 +37,6 @@ class LegalServicesController extends Controller
     {
       return view('legal-services.initial-legal-assessment.index');
     }
-
-    // Auth Required Pages
 
      public function legalCases()
     {
@@ -121,5 +120,21 @@ class LegalServicesController extends Controller
       ]);
     }
     
+    public function objectivesAndQuestionsPost(ObjectiveAndQuestionRequest $request, $id)
+    {
+      if ($this->legalCaseDetail->update($id, $request->all())) {
+        return json_encode(array('result'=>'success', 'message'=>'Updated Successfuly!'));
+      }
+      return json_encode(array('result'=>'error', 'message'=>'Update Failed!'));
+    }
+
+    public function summaryOfInformation($id)
+    {
+      $legalCase = $this->legalCase->getByAttributes(['id' => $id]);
+      $legalCaseDetails = $legalCase->legalCaseDetail;      
+      return view('legal-services.legal-cases.summary-of-information', [
+        'legalCaseDetails' => $legalCaseDetails
+      ]);
+    }
 
 }

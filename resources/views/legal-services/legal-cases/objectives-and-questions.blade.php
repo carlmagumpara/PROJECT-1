@@ -11,7 +11,7 @@
           <h3 class="margin-bottom-20">
             <strong>Objectives And Questions</strong>
           </h3>
-          <form id="objectives-and-questions-form" action="#" method="post">
+          <form id="objectives-and-questions-form" action="{{ route('legal-services.legal-cases.objectives-and-questions.post', $legalCaseDetails->legal_case_id) }}" method="post">
             {{ csrf_field() }}
             <div class="form-group">
               <label for="objectives" class="control-label">My Objectives/Ang Mga Gusto ko:</label>
@@ -29,11 +29,11 @@
             <small>
               *You can prepare your summary of facts in Microsoft Word then copy and paste in this text area.
             </small>
-            <div class="margin-bottom-30 margin-top-30 text-center">
-              <a href="{{ route('legal-services.legal-cases.summary-of-facts', $legalCaseDetails->legal_case_id) }}" class="btn btn-secondary margin-left-10 margin-right-10">
+            <div class="margin-bottom-30 margin-top-30">
+              <a href="{{ route('legal-services.legal-cases.summary-of-facts', $legalCaseDetails->legal_case_id) }}" class="btn btn-secondary margin-left-5 margin-right-5">
                 BACK
               </a>
-              <button type="submit" class="btn btn-primary margin-left-10 margin-right-10">
+              <button type="submit" class="btn btn-primary margin-left-5 margin-right-5">
                 NEXT
               </button>
             </div>
@@ -48,7 +48,7 @@
   <script type="text/javascript">
     $(document).ready(function(){
 
-      $('#summary-of-facts-form').submit(function(e){
+      $('#objectives-and-questions-form').submit(function(e){
         e.preventDefault();
         var button = $(this).find('[type=submit]');
         button.html('<i class="fa fa-spinner fa-spin"></i> PROCESSING...').addClass('disabled');
@@ -56,7 +56,7 @@
         $.post($(this).attr('action'), $(this).serializeArray() , function(data){
           var data = JSON.parse(data);
           if (data.result == 'success') {
-
+            window.location = '{{ route("legal-services.legal-cases.summary-of-information", $legalCaseDetails->legal_case_id) }}';
           } else {
             $.notify({
               title: 'Error',

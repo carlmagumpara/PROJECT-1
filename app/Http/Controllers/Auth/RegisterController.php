@@ -51,7 +51,7 @@ class RegisterController extends Controller
     {
         $this->validator($request->all())->validate();
         if (isset($request['end-user-agreement'])) {
-            $user = $this->create($request->all());
+            $this->create($request->all());
             return json_encode(array('result'=>'success', 'message'=>'Registered Successfuly!'));
         } else {
             return json_encode(array('result'=>'show_agreement', 'message'=>'Show End User Agreement Modal!'));
@@ -126,6 +126,7 @@ class RegisterController extends Controller
             $message->to($data['email'], $data['first_name'].' '.$data['last_name'])->subject('Credentials Verification - E-Lawyers Online');
         });
 
+        return true;
 
     }
 

@@ -30,10 +30,10 @@
                   <td>{{ $legalCase->legalCaseDetail->legal_service }}</td>
                   <td>{{ $legalCase->legalCaseDetail->status }}</td>
                   <td>{{ $legalCase->created_at->format('F d, Y h:i A') }}</td>
-                  <td>N/A</td>
+                  <td></td>
                   <td>{{ $legalCase->payment->status }}</td>
                   <td>
-                    <button type="button" class="btn btn-info">View</button>
+                    <a href="{{ route('legal-services.legal-cases.summary-of-information', $legalCase->id) }}" class="btn btn-info">View</a>
                   </td>
                 </tr>
               @endforeach
