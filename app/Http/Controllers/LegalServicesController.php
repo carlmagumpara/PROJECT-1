@@ -82,7 +82,6 @@ class LegalServicesController extends Controller
       $legalCaseDetails = $legalCase->legalCaseDetail;      
       return view('legal-services.legal-cases.legal-problem', [
         'legalCaseDetails' => $legalCaseDetails,
-        'legalProblemType' => $this->legalCasesType->all(),
       ]);
     }
 
@@ -136,5 +135,15 @@ class LegalServicesController extends Controller
         'legalCaseDetails' => $legalCaseDetails
       ]);
     }
+
+    public function perQuery($id){
+      $legalCase = $this->legalCase->getByAttributes(['id' => $id]);
+      $legalCaseDetails = $legalCase->legalCaseDetail;      
+      return view('legal-services.legal-cases.per-query', [
+        'legalCaseDetails' => $legalCaseDetails,
+        'legalProblemType' => $this->legalCasesType->all(),
+      ]);
+    }
+
 
 }

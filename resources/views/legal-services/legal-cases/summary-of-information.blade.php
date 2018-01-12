@@ -46,9 +46,11 @@
             </tr>
           </table>
           <div class="margin-bottom-30 margin-top-30">
-            <a href="{{ route('legal-services.legal-cases.objectives-and-questions', $legalCaseDetails->legal_case_id) }}" class="btn btn-secondary margin-left-5 margin-right-5">
-              BACK
-            </a>
+            @if ($legalCaseDetails->legalService->name == 'Per Query')
+              <a href="{{ route('legal-services.legal-cases.per-query', $legalCaseDetails->legal_case_id) }}" class="btn btn-secondary margin-left-5 margin-right-5">
+                BACK
+              </a>
+            @endif
             <button type="submit" class="btn btn-primary margin-left-5 margin-right-5">
               NEXT
             </button>

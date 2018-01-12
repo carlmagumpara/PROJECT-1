@@ -25,7 +25,7 @@
               Respectfully submitted.
             </p>
             <div class="margin-bottom-30 margin-top-30">
-              <a href="{{ route('legal-services.legal-cases.legal-problem', $legalCaseDetails->legal_case_id) }}" class="btn btn-primary">
+              <a href="{{ route('legal-services.legal-cases.per-query', $legalCaseDetails->legal_case_id) }}" class="btn btn-primary">
                 SUBMIT 
               </a>
             </div>

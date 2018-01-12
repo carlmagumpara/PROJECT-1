@@ -36,4 +36,8 @@ Route::group(['prefix' => 'legal-cases', 'middleware' => ['web', 'auth']], funct
   Route::get('/objectives-and-questions/{legal_problem_id}', ['uses' => 'LegalServicesController@objectivesAndQuestions', 'as' => 'legal-services.legal-cases.objectives-and-questions']);
   Route::post('/objectives-and-questions/{legal_problem_id}', ['uses' => 'LegalServicesController@objectivesAndQuestionsPost', 'as' => 'legal-services.legal-cases.objectives-and-questions.post']);
   Route::get('/summary-of-information/{legal_problem_id}', ['uses' => 'LegalServicesController@summaryOfInformation', 'as' => 'legal-services.legal-cases.summary-of-information']);
+
+
+  Route::get('/per-query/{legal_problem_id}', ['uses' => 'LegalServicesController@perQuery', 'as' => 'legal-services.legal-cases.per-query']);
+  
 });
