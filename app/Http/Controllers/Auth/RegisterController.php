@@ -2,18 +2,20 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Http\Request;
 use App\Modules\User\Models\User;
+use Illuminate\Foundation\Auth\RegistersUsers;
 use App\PersonalInfo;
 use App\Modules\CorporatePartnership\Models\CorporatePartnershipInfo;
 use App\Modules\Personal\Models\Spouse;
 use App\Modules\Personal\Models\ChildrenInfo;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Mail;
 
 class RegisterController extends Controller
 {
+
     /*
     |--------------------------------------------------------------------------
     | Register Controller
@@ -24,6 +26,7 @@ class RegisterController extends Controller
     | provide this functionality without requiring any additional code.
     |
     */
+    use RegistersUsers;
 
     /**
      * Where to redirect users after registration.

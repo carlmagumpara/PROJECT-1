@@ -13,7 +13,6 @@
 
 // Users Auth
 Auth::routes();
-Route::post('/register', ['uses' => 'Auth\RegisterController@register', 'as' => 'register']);
 Route::get('/thank-you', ['uses' => 'Auth\RegisterController@thankYou', 'as' => 'auth.thank-you']);
 Route::get('/verified-account/{code}', ['uses' => 'Auth\RegisterController@verifiedAcount', 'as' => 'auth.verified-account']);
 
@@ -36,8 +35,7 @@ Route::group(['prefix' => 'legal-cases', 'middleware' => ['web', 'auth']], funct
   Route::get('/objectives-and-questions/{legal_problem_id}', ['uses' => 'LegalServicesController@objectivesAndQuestions', 'as' => 'legal-services.legal-cases.objectives-and-questions']);
   Route::post('/objectives-and-questions/{legal_problem_id}', ['uses' => 'LegalServicesController@objectivesAndQuestionsPost', 'as' => 'legal-services.legal-cases.objectives-and-questions.post']);
   Route::get('/summary-of-information/{legal_problem_id}', ['uses' => 'LegalServicesController@summaryOfInformation', 'as' => 'legal-services.legal-cases.summary-of-information']);
-
-
   Route::get('/per-query/{legal_problem_id}', ['uses' => 'LegalServicesController@perQuery', 'as' => 'legal-services.legal-cases.per-query']);
-  
+  Route::get('/online-legal-consultation-agreement/{legal_problem_id}', ['uses' => 'LegalServicesController@onlineLegalConsultationaAgreement', 'as' => 'legal-services.legal-cases.online-legal-consultationa-agreement']);
+  Route::get('/mode-of-payment/{legal_problem_id}', ['uses' => 'LegalServicesController@modeOfPayment', 'as' => 'legal-services.legal-cases.mode-of-payment']);
 });

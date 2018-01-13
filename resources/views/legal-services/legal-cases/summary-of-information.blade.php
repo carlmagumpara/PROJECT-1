@@ -13,35 +13,35 @@
           </h3>
           <table>
             <tr>
-              <td class="w-30 p-2">My Legal Problem is</td>
+              <td class="w-30 p-2">My Legal Problem is:</td>
               <td>{{ $legalCaseDetails->legalCase->legal_problem }}</td>
             </tr>
             <tr>
-              <td class="w-25 p-2">Case Detail Id</td>
+              <td class="w-25 p-2">Case Detail ID:</td>
               <td>{{ $legalCaseDetails->id }}</td>
             </tr>
             <tr>
-              <td class="w-25 p-2">Summary of Facts</td>
+              <td class="w-25 p-2">Summary of Facts:</td>
               <td>{{ $legalCaseDetails->summary }}</td>
             </tr>
             <tr>
-              <td class="w-25 p-2">My Objectives</td>
+              <td class="w-25 p-2">My Objectives:</td>
               <td>{{ $legalCaseDetails->objectives }}</td>
             </tr>
             <tr>
-              <td class="w-25 p-2">My Questions</td>
+              <td class="w-25 p-2">My Questions:</td>
               <td>{{ $legalCaseDetails->questions }}</td>
             </tr>
             <tr>
-              <td class="w-25 p-2">Status</td>
+              <td class="w-25 p-2">Status:</td>
               <td>{{ $legalCaseDetails->status }}</td>
             </tr>
             <tr>
-              <td class="w-25 p-2">Date Created</td>
+              <td class="w-25 p-2">Date Created:</td>
               <td>{{ $legalCaseDetails->legalCase->created_at->format('F d, Y') }}</td>
             </tr>
             <tr>
-              <td class="w-25 p-2">Professional Fee</td>
+              <td class="w-25 p-2">Professional Fee:</td>
               <td>&#8369;{{ $legalCaseDetails->legalService->fee }}.00</td>
             </tr>
           </table>
@@ -51,9 +51,9 @@
                 BACK
               </a>
             @endif
-            <button type="submit" class="btn btn-primary margin-left-5 margin-right-5">
+            <a href="{{ route('legal-services.legal-cases.online-legal-consultationa-agreement', $legalCaseDetails->legal_case_id) }}" class="btn btn-primary margin-left-5 margin-right-5">
               NEXT
-            </button>
+            </a>
           </div>
         </div>
       </div>

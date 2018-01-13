@@ -137,6 +137,24 @@ class LegalServicesController extends Controller
       ]);
     }
 
+    public function onlineLegalConsultationaAgreement($id)
+    {
+      $legalCase = $this->legalCase->getByAttributes(['id' => $id]);
+      $legalCaseDetails = $legalCase->legalCaseDetail;      
+      return view('legal-services.legal-cases.online-legal-consultationa-agreement', [
+        'legalCaseDetails' => $legalCaseDetails
+      ]);
+    }
+
+    public function modeOfPayment($id)
+    {
+      $legalCase = $this->legalCase->getByAttributes(['id' => $id]);
+      $legalCaseDetails = $legalCase->legalCaseDetail;      
+      return view('legal-services.legal-cases.mode-of-payment', [
+        'legalCaseDetails' => $legalCaseDetails
+      ]);
+    }
+  
     public function perQuery($id){
       $legalCase = $this->legalCase->getByAttributes(['id' => $id]);
       $legalCaseDetails = $legalCase->legalCaseDetail;      

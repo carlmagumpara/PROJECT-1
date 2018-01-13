@@ -18,7 +18,7 @@ class CreatePaymentsTable extends Migration
             $table->integer('user_id');
             $table->integer('case_id');
             $table->integer('case_detail_id');
-            $table->enum('option', ['Bank Deposit','Paypal','GCash','SmartMoney'])->nullable();
+            $table->enum('option', ['Bank Deposit','Paypal','GCash','SmartMoney','Cashsense'])->nullable();
             $table->string('bank_name');
             $table->date('bank_date_deposited');
             $table->string('bank_branch');

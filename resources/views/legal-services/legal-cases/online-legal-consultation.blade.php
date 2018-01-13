@@ -108,7 +108,7 @@
     	$('#legal-services [type=radio]').each(function(k, v){
     		$(v).click(function(e){
     			$('#online-legal-consultation-tab a[href="#'+$(this).attr('data-type')+'"]').tab('show');
-    		})
+    		});
     	});
 
       $('#online-legal-consultation-form').submit(function(e){

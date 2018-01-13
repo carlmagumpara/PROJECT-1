@@ -84,5 +84,45 @@
 				'data-type' => 'case_project_retainer'
 			],
 		],
+		'mode-of-payment' => [
+			'options' => [
+				[
+					'type' => 'Bank Deposit',
+					'data-type' => 'bank_deposit',
+				],
+				[
+					'type' => 'Paypal',
+					'data-type' => 'paypal',
+				],
+				[
+					'type' => 'GCash',
+					'data-type' => 'gcash',
+				],
+				[
+					'type' => 'SmartMoney',
+					'data-type' => 'smartmoney',
+				],
+				[
+					'type' => 'Cashsense',
+					'data-type' => 'cashsense',
+				],
+			],
+			'gcash_type' => [
+				'GCash Mobile',
+				'GCash Online',
+				'GCash Remit',
+			],
+			'smartmoney_type' => [
+				'Over-the-Counter',
+				'Wallet-to-Wallet',
+				'Mobile Banking Service',
+				'Smart Padala',
+			],
+			'status' => [
+				'Pending',
+				'Overdue',
+				'Confirmed',
+			],
+		],
 	];
 ?>
