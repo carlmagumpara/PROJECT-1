@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\LegalServiceRequest;
 use App\Http\Requests\LegalProblemRequest;
 use App\Http\Requests\SummaryOfFactsRequest;
 use App\Http\Requests\ObjectiveAndQuestionRequest;
@@ -49,7 +50,7 @@ class LegalServicesController extends Controller
       return view('legal-services.legal-cases.online-legal-consultation');
     }
 
-    public function newLegalCase(Request $request)
+    public function newLegalCase(LegalServiceRequest $request)
     {
       if ($legalCase = $this->legalCase->store(['user_id' => Auth::user()->id])) {
         $legalCaseDetails = [
@@ -63,7 +64,7 @@ class LegalServicesController extends Controller
           'case_detail_id' => $legalCaseDetail->id,
         ];
         $this->payment->store($payment);
-        return redirect(route('legal-services.legal-cases.leter-of-intent', $legalCase->id));
+        return json_encode(array('result'=>'success', 'message'=>'Updated Successfuly!', 'redirect' => route('legal-services.legal-cases.leter-of-intent', $legalCase->id)));
       }
     }
 

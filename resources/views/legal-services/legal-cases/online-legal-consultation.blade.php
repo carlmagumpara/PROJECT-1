@@ -15,7 +15,7 @@
           	The Online Legal Consultation Service offers you the most convenient way to start an attorney-client relationship by discussing all your legal problems online and choosing from the five (5) types of online legal service most preferable to 
           </p>
         	<div class="margin-bottom-30 margin-top-30 text-center">
-	          <form action="{{ route('legal-services.legal-cases.online-legal-consultation.new') }}" method="POST">
+	          <form id="online-legal-consultation-form" action="{{ route('legal-services.legal-cases.online-legal-consultation.new') }}" method="POST">
 	          	{{ csrf_field() }}
 	          	<div class="margin-bottom-30 margin-top-30 text-center" id="legal-services">
 								@for ($i = 0; $i < count(config('enum.legal_services')); $i++)
@@ -104,11 +104,67 @@
 @section('script')
   <script type="text/javascript">
     $(document).ready(function(){
+
     	$('#legal-services [type=radio]').each(function(k, v){
     		$(v).click(function(e){
     			$('#online-legal-consultation-tab a[href="#'+$(this).attr('data-type')+'"]').tab('show');
     		})
     	});
+
+      $('#online-legal-consultation-form').submit(function(e){
+        e.preventDefault();
+        var button = $(this).find('[type=submit]');
+        button.html('<i class="fa fa-spinner fa-spin"></i> PROCESSING...').addClass('disabled');
+        $('#loader').removeClass('d-none');
+        $.post($(this).attr('action'), $(this).serializeArray() , function(data){
+          var data = JSON.parse(data);
+          if (data.result == 'success') {
+            window.location = data.redirect;
+          } else {
+            $.notify({
+              title: 'Error',
+              message: data.message
+            },{
+              allow_dismiss: true,
+              type: 'danger',
+              delay: 3000,
+              newest_on_top: true,
+              placement: {
+                from: 'top',
+                align: 'right'
+              }
+            });
+          }
+          button.text('NEXT').removeClass('disabled');
+          $('#loader').addClass('d-none');
+        }).fail(function(error){
+          if(error.readyState == 4) {
+            var errors = [];
+            $.each(error.responseJSON,function(key,value){
+              $.each(value,function(key,val) {
+                errors += '<li>'+val+'</li>';
+              });
+            });
+            $.notify({
+              title: 'Error',
+              message: '<ul>'+errors+'</ul>'
+            },{
+              z_index: 9999999,
+              type: 'danger',
+              delay: 3000,
+              newest_on_top: true,
+              placement: {
+                from: 'top',
+                align: 'right'
+              }
+            });
+            button.text('NEXT').removeClass('disabled');
+            $('#loader').addClass('d-none');
+          }
+        });
+      });
+
+
     });
   </script>
 @endsection

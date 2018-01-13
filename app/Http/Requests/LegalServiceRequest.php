@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class SummaryOfFactsRequest extends FormRequest
+class LegalServiceRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,7 @@ class SummaryOfFactsRequest extends FormRequest
     public function rules()
     {
         return [
-            'summary' => 'required',
+            'legal-case-type' => 'required'
         ];
     }
 
@@ -36,7 +36,7 @@ class SummaryOfFactsRequest extends FormRequest
     public function messages()
     {
         return [
-            'summary.required' => 'The summary of facts is required',
+            'legal-case-type.required' => 'Please choose legal service first!',
         ];
     }
 

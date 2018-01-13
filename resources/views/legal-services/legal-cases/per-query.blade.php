@@ -15,7 +15,7 @@
             <div class="card">
               <div class="card-header" role="tab" id="headingOne">
                 <h5 class="mb-0">
-                  <a data-toggle="collapse" href="#legal-problem" role="button" aria-expanded="true" aria-controls="legal-problem">
+                  <a data-toggle="collapse" href="#legal-problem" role="button" aria-expanded="true" aria-controls="legal-problem" class="text-dark">
                     My Legal Problem is - Ang Problema kong Legal ay:
                   </a>
                 </h5>
@@ -29,7 +29,7 @@
             <div class="card">
               <div class="card-header" role="tab" id="headingTwo">
                 <h5 class="mb-0">
-                  <a class="collapsed" data-toggle="collapse" href="#summary-of-facts" role="button" aria-expanded="false" aria-controls="summary-of-facts">
+                  <a class="collapsed text-dark" data-toggle="collapse" href="#summary-of-facts" role="button" aria-expanded="false" aria-controls="summary-of-facts">
                     Summary Of Facts
                   </a>
                 </h5>
@@ -43,7 +43,7 @@
             <div class="card">
               <div class="card-header" role="tab" id="headingThree">
                 <h5 class="mb-0">
-                  <a class="collapsed" data-toggle="collapse" href="#objectives-and-questions" role="button" aria-expanded="false" aria-controls="objectives-and-questions">
+                  <a class="collapsed text-dark" data-toggle="collapse" href="#objectives-and-questions" role="button" aria-expanded="false" aria-controls="objectives-and-questions">
                     Objectives And Questions
                   </a>
                 </h5>
@@ -65,6 +65,10 @@
   <script type="text/javascript">
     $(document).ready(function(){
 
+      var legal_problem = true;
+      var summary_of_facts = false;
+      var objectives_and_questions = false;
+
       $('#legal-problem-form').submit(function(e){
         e.preventDefault();
         var button = $(this).find('[type=submit]');
@@ -73,6 +77,9 @@
         $.post($(this).attr('action'), $(this).serializeArray() , function(data){
           var data = JSON.parse(data);
           if (data.result == 'success') {
+            summary_of_facts = true;
+            legal_problem = false;
+            objectives_and_questions = false;
             $('[aria-controls=summary-of-facts]').click();
           } else {
             $.notify({
@@ -119,6 +126,9 @@
       });
 
       $('#summary-of-facts-back').click(function(){
+        summary_of_facts = false;
+        legal_problem = true;
+        objectives_and_questions = false;
         $('[aria-controls=legal-problem]').click();
       });
 
@@ -130,6 +140,9 @@
         $.post($(this).attr('action'), $(this).serializeArray() , function(data){
           var data = JSON.parse(data);
           if (data.result == 'success') {
+            summary_of_facts = false;
+            legal_problem = false;
+            objectives_and_questions = true;
             $('[aria-controls=objectives-and-questions]').click();
           } else {
             $.notify({
@@ -176,6 +189,9 @@
       });
 
       $('#objectives-and-questions-back').click(function(){
+        summary_of_facts = true;
+        legal_problem = false;
+        objectives_and_questions = false;
         $('[aria-controls=summary-of-facts]').click();
       });
 
@@ -232,15 +248,49 @@
         });
       });
 
-      // $('#accordion').on('show.bs.collapse', function (e) {
-      //   console.log(e.target)
-      //   e.preventDefault();
-      // });
+      $('#accordion').on('show.bs.collapse', function (e) {
+        switch($(e.target).attr('id')) {
+          case 'legal-problem':
+            if (!legal_problem) {
+              e.preventDefault();
+            }
+            break;
+          case 'summary-of-facts':
+            if (!summary_of_facts) {
+              e.preventDefault();
+            }
+            break;
+          case 'objectives-and-questions':
+            if (!objectives_and_questions) {
+              e.preventDefault();
+            }
+            break;
+          default:
+            e.preventDefault();
+        }
+      });
 
-      // $('#accordion').on('hide.bs.collapse', function (e) {
-      //   console.log(e.target)
-      //   e.preventDefault();
-      // });
+      $('#accordion').on('hide.bs.collapse', function (e) {
+        switch($(e.target).attr('id')) {
+          case 'legal-problem':
+            if (legal_problem) {
+              e.preventDefault();
+            }
+            break;
+          case 'summary-of-facts':
+            if (summary_of_facts) {
+              e.preventDefault();
+            }
+            break;
+          case 'objectives-and-questions':
+            if (objectives_and_questions) {
+              e.preventDefault();
+            }
+            break;
+          default:
+            e.preventDefault();
+        }
+      });
 
     });
   </script>
