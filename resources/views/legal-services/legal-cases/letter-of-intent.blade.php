@@ -29,6 +29,26 @@
                 SUBMIT 
               </a>
             </div>
+
+          @elseif ($legalCaseDetails->legalService->name == 'Video Conference')
+            <p>
+              {{ $legalCaseDetails->legalCase->created_at->format('F d, Y') }}
+            </p>
+            <p>
+              I, {{ Auth::user()->personalInfo->first_name.' '.Auth::user()->personalInfo->last_name }}, with registered e-mail address of {{ Auth::user()->email }}, of legal age, hereby intends to obtain from E-Lawyers Online your service of online legal consultation via Video Conference through  Skype or  Yahoo Messenger using 
+              carlmagumpara
+               as my user name on (check calendar for available schedule) 
+               from 
+               to 
+               for 
+               no. of hours.
+
+              I agree to pay the amount of Php  
+               as professional fee. I undertake to pay the same within 24 hours from submission of this letter of intent and I understand that my failure to pay within the said period shall entitle E-Lawyers Online to open the said schedule for other clients. I expressly acknowledge that the said fee is for the full payment for the duration of the number of hour/s of consultation requested and any unused time shall be considered forfeited in favor of E-Lawyers Online. For this purpose, I am providing you my personal information, the summary of the facts of my legal problem including documents (if any), my objective, my questions and my acceptance of your Online Legal Consultation Agreement.
+            </p>
+            <p>
+              Respectfully submitted.
+            </p>
           @endif
         </div>
       </div>

@@ -34,7 +34,8 @@ elixir((mix) => {
         'eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css',
         'nprogress/nprogress.css',
         'open-sans-fontface/open-sans.css',
-        'datatables.net-bs4/css/dataTables.bootstrap4.min.css'
+        'datatables.net-bs4/css/dataTables.bootstrap4.min.css',
+        'dropzone/dist/min/dropzone.min.css'
     ], 'public/css/compiled.css', bowerDir);
 
     mix.styles([
@@ -51,7 +52,8 @@ elixir((mix) => {
             'nprogress/nprogress.js',
             'datatables.net/js/jquery.dataTables.min.js',
             'datatables.net-bs4/js/dataTables.bootstrap4.min.js',
-            'remarkable-bootstrap-notify/dist/bootstrap-notify.min.js'
+            'remarkable-bootstrap-notify/dist/bootstrap-notify.min.js',
+            'dropzone/dist/min/dropzone.min.js'
             ], 'public/js/compiled.js', bowerDir);
 
     mix.scripts([
