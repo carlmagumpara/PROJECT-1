@@ -1,5 +1,14 @@
-<div class="btn-group-vertical social-link-fixed d-none animated bounceIn">
-  <button type="button" class="btn btn-lg btn-success rounded-0" id="go-to-top">
+<div class="btn-group-vertical social-link-fixed">
+  <a class="btn btn-lg text-white rounded-0" style="background-color: #3b5998;" href="http://www.facebook.com/E.Lawyers.Online" target="_blank">
+    <i class="fa fa-facebook" aria-hidden="true"></i>
+  </a>
+  <a class="btn btn-lg text-white rounded-0" style="background-color: #44ccf6;" href="http://twitter.com/#!/ELawyersOnline" target="_blank">
+    <i class="fa fa-twitter" aria-hidden="true"></i>
+  </a>
+  <a class="btn btn-lg text-white rounded-0" style="background-color: #3498DB;" href="http://www.linkedin.com/groups?gid=3995143&trk=hb_side_g" target="_blank">
+    <i class="fa fa-linkedin" aria-hidden="true"></i>
+  </a>
+  <button type="button" class="btn btn-lg btn-success rounded-0" style="display: none;" id="scroll-to-top">
     <i class="fa fa-arrow-up" aria-hidden="true"></i>
   </button>
 </div>
@@ -43,19 +52,29 @@
         <h5 class="text-white margin-bottom-20 margin-top-30">Site Links</h5>
           <ul class="list-group site-links">
             <li class="list-group-item border-0 bg-transparent">
-              <a href="{{ route('app.index') }}"><i class="fa fa-angle-right" aria-hidden="true"></i> Home </a>
+              <a href="{{ route('app.index') }}">
+                Home
+              </a>
             </li>
             <li class="list-group-item border-0 bg-transparent">
-              <a href="{{ route('app.lawyers-profile.index') }}"><i class="fa fa-angle-right" aria-hidden="true"></i> Lawyer's Profile </a>
+              <a href="{{ route('app.lawyers-profile.index') }}">
+                Lawyer's Profile 
+              </a>
             </li>
             <li class="list-group-item border-0 bg-transparent">
-              <a href="{{ route('app.our-services.index') }}"><i class="fa fa-angle-right" aria-hidden="true"></i> Our Services</a>
+              <a href="{{ route('app.our-services.index') }}">
+                Our Services
+              </a>
             </li>
             <li class="list-group-item border-0 bg-transparent">
-              <a href="{{ route('app.outradeous-laws-and-lawsuits.index') }}"><i class="fa fa-angle-right" aria-hidden="true"></i> Outrageous Laws & Lawsuits</a>
+              <a href="{{ route('app.outradeous-laws-and-lawsuits.index') }}">
+                Outrageous Laws & Lawsuits
+              </a>
             </li>
             <li class="list-group-item border-0 bg-transparent">
-              <a href="{{ route('app.lawyers-quotes.index') }}"><i class="fa fa-angle-right" aria-hidden="true"></i> Lawyer's Quotes</a>
+              <a href="{{ route('app.lawyers-quotes.index') }}">
+                Lawyer's Quotes
+              </a>
             </li>
           </ul>
       </div>
@@ -64,17 +83,17 @@
         <ul class="list-group site-links">
           <li class="list-group-item border-0 bg-transparent">
             <a href="http://www.facebook.com/E.Lawyers.Online" target="_blank">
-              <i class="fa fa-facebook" aria-hidden="true"></i> Facebook
+              Facebook
             </a>
           </li>
           <li class="list-group-item border-0 bg-transparent">
             <a href="http://twitter.com/#!/ELawyersOnline" target="_blank">
-              <i class="fa fa-twitter" aria-hidden="true"></i> Twitter
+              Twitter
             </a>
           </li>
           <li class="list-group-item border-0 bg-transparent">
             <a href="http://www.linkedin.com/groups?gid=3995143&trk=hb_side_g" target="_blank">
-              <i class="fa fa-linkedin" aria-hidden="true"></i> Linked In
+              Linked In
             </a>
           </li>
         </ul>

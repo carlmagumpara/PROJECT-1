@@ -36,26 +36,16 @@ $(document).ready(function(){
   if (!isMobile()) {
     $(window).on('load resize scroll', function(e){
         var scroll = $(window).scrollTop();
-        if (scroll >= 200) {
-          $('.navbar').addClass('padding-0');
-          $('.logo').addClass('small-logo');
-          $('#small-top-nav').addClass('d-none');
-          $('.social-link-fixed').removeClass('d-none bounceOut').addClass('bounceIn');
-          $('.text-logo').removeClass('d-none');
-          $('#nav-position-control').removeClass('postion-absolute-top').addClass('fixed-top');
+        if (scroll >= 500) {
+          $('#scroll-to-top').slideDown();
         }
         else {
-          $('.logo').removeClass('small-logo');
-          $('.navbar').removeClass('padding-0');
-          $('#small-top-nav').removeClass('d-none');
-          $('.social-link-fixed').removeClass('bounceIn').addClass('bounceOut');
-          $('.text-logo').addClass('d-none');
-          $('#nav-position-control').removeClass('fixed-top').addClass('postion-absolute-top');
+          $('#scroll-to-top').slideUp();
         }
     });
   }
 
-  $('#go-to-top').click(function(e){
+  $('#scroll-to-top').click(function(e){
     e.preventDefault();
     $('html, body').animate({
       scrollTop: 0

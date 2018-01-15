@@ -7,7 +7,7 @@
   <div class="row">
     <div class="col-md-4 offset-md-4">
       <div>
-        <div class="text-center margin-top-30 margin-bottom-30">
+        <div class="text-center">
           <a href="{{ route('app.index') }}">
             <img src="{{ asset('img/logo.png') }}" class="" alt="e-lawyers online logo">
           </a>

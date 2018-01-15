@@ -48,7 +48,7 @@
     }
   @endphp
 </head>
-<body class="bg-gray {{ noNavBar() ? 'with-bg-img' : 'padding-top-220' }}">
+<body class="{{ noNavBar() ? 'with-bg-img' : 'bg-gray' }}">
   <div id="loader">
     <img src="{{ asset('img/loader.svg') }}">
   </div>

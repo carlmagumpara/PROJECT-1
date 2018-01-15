@@ -16,13 +16,13 @@
       <div class="card-body padding-0">
         <div class="list-group side-menu">
           <a href="{{ route('legal-services.initial-legal-assessment.index') }}" class="border-0 rounded-0 list-group-item list-group-item-action {{isCurrentPageSideNav('legal-services.initial-legal-assessment.index')}}">
-            <i class="fa fa-angle-right" aria-hidden="true"></i> INNITIAL LEGAL ASSESSMENT
+            INNITIAL LEGAL ASSESSMENT
           </a>
-          <a href="{{ route('legal-services.index') }}#per-query" class="border-0 list-group-item list-group-item-action" ><i class="fa fa-angle-right" aria-hidden="true"></i> LEGAL ADVICE BY E-MAIL</a>
-          <a href="{{ route('legal-services.index') }}#video-conference" class="border-0 list-group-item list-group-item-action"><i class="fa fa-angle-right" aria-hidden="true"></i> VIDEO CONFERENCE W/ A LAWYER</a>
-          <a href="{{ route('legal-services.index') }}#office-conference" class="border-0 list-group-item list-group-item-action"><i class="fa fa-angle-right" aria-hidden="true"></i> OFFICE CONFERENCE W/ A LAWYER</a>
-          <a href="{{ route('legal-services.index') }}#monthly-retainer" class="border-0 list-group-item list-group-item-action"><i class="fa fa-angle-right" aria-hidden="true"></i> MONTHLY RETAINER</a>
-          <a href="{{ route('legal-services.index') }}#case-project-retainer" class="border-0 rounded-0 list-group-item list-group-item-action"><i class="fa fa-angle-right" aria-hidden="true"></i> PER CASE/PROJECT RETAINER</a>
+          <a href="{{ route('legal-services.index') }}#per-query" class="border-0 list-group-item list-group-item-action" >LEGAL ADVICE BY E-MAIL</a>
+          <a href="{{ route('legal-services.index') }}#video-conference" class="border-0 list-group-item list-group-item-action">VIDEO CONFERENCE W/ A LAWYER</a>
+          <a href="{{ route('legal-services.index') }}#office-conference" class="border-0 list-group-item list-group-item-action">OFFICE CONFERENCE W/ A LAWYER</a>
+          <a href="{{ route('legal-services.index') }}#monthly-retainer" class="border-0 list-group-item list-group-item-action">MONTHLY RETAINER</a>
+          <a href="{{ route('legal-services.index') }}#case-project-retainer" class="border-0 rounded-0 list-group-item list-group-item-action">PER CASE/PROJECT RETAINER</a>
         </div>
       </div>
     </div>

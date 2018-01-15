@@ -29,7 +29,7 @@
       $('#legal-problem-form').submit(function(e){
         e.preventDefault();
         var button = $(this).find('[type=submit]');
-        button.html('<i class="fa fa-spinner fa-spin"></i> PROCESSING...').addClass('disabled');
+        button.addClass('disabled');
         $('#loader').removeClass('d-none');
         $.post($(this).attr('action'), $(this).serializeArray() , function(data){
           var data = JSON.parse(data);
@@ -53,7 +53,7 @@
               }
             });
           }
-          button.text('NEXT').removeClass('disabled');
+          button.text('CONTINUE').removeClass('disabled');
           $('#loader').addClass('d-none');
         }).fail(function(error){
           if(error.readyState == 4) {
@@ -92,7 +92,7 @@
       $('#summary-of-facts-form').submit(function(e){
         e.preventDefault();
         var button = $(this).find('[type=submit]');
-        button.html('<i class="fa fa-spinner fa-spin"></i> PROCESSING...').addClass('disabled');
+        button.addClass('disabled');
         $('#loader').removeClass('d-none');
         $.post($(this).attr('action'), $(this).serializeArray() , function(data){
           var data = JSON.parse(data);
@@ -155,7 +155,7 @@
       $('#objectives-and-questions-form').submit(function(e){
         e.preventDefault();
         var button = $(this).find('[type=submit]');
-        button.html('<i class="fa fa-spinner fa-spin"></i> PROCESSING...').addClass('disabled');
+        button.addClass('disabled');
         $('#loader').removeClass('d-none');
         $.post($(this).attr('action'), $(this).serializeArray() , function(data){
           var data = JSON.parse(data);

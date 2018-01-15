@@ -14,7 +14,11 @@
           <div style="padding: 0px 25px 25px 0;" class="float-left">
             <img src="{{ asset('img/marlon_pic.jpg') }}" width="130"/>
           </div>
-          <h3 class="margin-bottom-20">Professional Profile of Atty. Marlon P. Valderama</h3>
+          <h4 class="margin-bottom-20">
+            <strong>
+              Professional Profile of Atty. Marlon P. Valderama
+            </strong>
+          </h4>
           <p><strong>Atty. Marlon P. Valderama</strong> is the Founder and Managing Partner of "E-Lawyers Online", the online legal consultation platform of Valderama Law Office. His professional dealings with Overseas Filipinos and foreigner investors have motivated him to establish this website as a medium or tool to obtain legal services and advice, for those clients abroad. With his ever-growing clientele in Kuwait, Qatar, Canada, USA and UK, he created "E-Lawyers Online".</p>
           <p>Coming from his humble beginning in the progressive town of Gumaca, Quezon, he persevered and finished his law school in Asia&rsquo;s oldest university, University of Santo Tomas (UST). He is a graduate of UST, Faculty of Civil Law, Class of 2001. His pre-law course is likewise in UST, Faculty of Arts and Letters, Class of 1996, Major in Philosophy.</p>
           <p>While studying law, he worked as a legal officer in a real estate company and thereafter, in a trading company of pumps, pharmaceutical, chemicals, car accessories and other products. Upon admission to the Philippine Bar in 2002 and before entering into private practice, he worked in various government offices, as Legal Researcher of Presidential Commission on Good Government (PCGG) and as Associate Solicitor III of the Office of the Solicitor General (OSG). Thereafter, he ventured into trial practice with the Florentino and Esmaquel Law Office and acquired 10 years of experience as a corporate and litigation lawyer on all court levels and in various government agencies.</p>

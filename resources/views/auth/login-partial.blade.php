@@ -2,15 +2,15 @@
   <div class="card-body">
     <h4 class="margin-bottom-20">LOGIN</h4>
     <div id="login-alert"></div>
-    <form role="form" method="POST" action="{{ url('/login') }}" id="login-form" autocomplete="off">
+    <form role="form" method="POST" action="{{ url('/login') }}" id="login-form" autocomplete="off" data-url-intended="{{ !empty(session('url.intended')) ? session('url.intended') : '/' }}">
       {{ csrf_field() }}
       <div class="form-group{{ $errors->has('email') ? ' has-danger' : '' }}">
-          <label for="email" class="control-label">E-Mail Address</label>
-          <input id="email" type="email" class="form-control" name="email" placeholder="Email" required>
+        <label for="email" class="control-label">E-Mail Address</label>
+        <input id="email" type="email" class="form-control" name="email" placeholder="Email" required>
       </div>
       <div class="form-group{{ $errors->has('password') ? ' has-danger' : '' }}">
-          <label for="password" class="control-label">Password</label>
-          <input id="password" type="password" class="form-control" name="password" placeholder="Password" autocomplete="new-password" required>
+        <label for="password" class="control-label">Password</label>
+        <input id="password" type="password" class="form-control" name="password" placeholder="Password" autocomplete="new-password" required>
       </div>
       <div class="form-group">
         <div class="checkbox">

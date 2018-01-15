@@ -16,7 +16,11 @@
               <img src="{{ asset('img/ourservices_pic.jpg') }}" class="img-responsive" />
             </div>
             <div class="col-md-9">
-              <h3>The following are our services that we can provide to our clients, to wit:</h3>
+              <h4 class="margin-bottom-20">
+                <strong>
+                  The following are our services that we can provide to our clients, to wit:
+                </strong>
+              </h4>
               <p class="lead"><strong>PERSONAL &amp; FAMILY LAW:</strong></p>
               <ul>
               <li>Annulment of marriage</li>

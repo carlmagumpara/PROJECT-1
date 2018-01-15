@@ -18,7 +18,7 @@
   </div>
   <div class="margin-bottom-30 margin-top-30">
     <button type="submit" class="btn btn-primary margin-left-5 margin-right-5">
-      NEXT
+      CONTINUE
     </button>
   </div>
 </form>

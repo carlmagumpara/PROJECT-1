@@ -25,7 +25,7 @@
             <li>I agree that E-Lawyers Online shall have the right to first assess the scope of services based on the facts and documents submitted by me and to determine if the same is commensurate to the fees paid by me. E-Lawyers Online shall have the right to refund my fee in the event of disagreement of the parties upon determination that the fee is not proportionate to the legal services requested.</li>
             <li>The legal fee is for the full payment for the online consultation for the subject matter of my query/ies and any question/s I did not ask/provide in this website upon submission of this form shall be considered waived and forfeited. Follow-up questions or queries on other subject matter not covered by the fee may be entertained at the option of E-Lawyers Online on a discounted basis.</li>
           </ol>       
-          <div class="margin-bottom-30 margin-top-30">
+          <div class="margin-bottom-30 margin-top-30 text-center">
             <strong>
               I hereby
               <label class="custom-control custom-radio">

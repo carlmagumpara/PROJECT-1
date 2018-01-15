@@ -14,7 +14,11 @@
           <div style="padding:0 25px 25px 0;" class="float-left">
             <img src="{{ asset('img/everydaylaw_pic.jpg') }}" width="160" />
           </div>
-          <h3 class="margin-bottom-20">Annulment of Marriage, in the Philippines!</h3>
+          <h4 class="margin-bottom-20">
+            <strong>
+              Annulment of Marriage, in the Philippines!
+            </strong>
+          </h4>
           <p><em>ATTY.! Ayaw pumayag pumirma ng mister ko sa agreement para sa annulment ng kasal namin! Paano gagawin ko? </em></p>
           <p> This is a common misconception among Filipinos regarding the legal concept of marriage and annulment here in the Philippines. My answer is that you cannot do that here in the Philippines. We sometimes encounter or hear this discussion from our relatives, friends and acquaintance with troubled marriages giving the notion that it is allowed under Philippine law for the parties to simply agree on the &#8220;hiwalayan&#8221; or dissolution of their marriage. To state it again, this is not allowed under Philippine law.</p>
           <p>In the U.S.A., Japan and other countries, divorce is legal, where couples could marry in the morning and obtain a divorce decree in the afternoon. Remember Britney Spears marrying her childhood friend Jason Allen Alexander on January 3, 2004, at Las Vegas wherein the marriage lasted 55 hours and ended in annulment. Had Britney Spears been a Filipina, she would have difficulty unknotting her marriage ties because that kind of process of marriage and annulment is not allowed here. </p>

@@ -12,7 +12,11 @@
           <div style="padding:0 25px 25px 0;" class="float-left">
             <img src="{{ asset('img/lawandsociety_pic.jpg') }}" width="250" height="184"/>
           </div>
-          <h3 class="margin-bottom-20">You, Facebook and the Law...</h3>
+          <h4 class="margin-bottom-20">
+            <strong>
+              You, Facebook and the Law...
+            </strong>
+          </h4>
           <p>Facebook is the &quot;most popular social networking website on the Internet today&quot; and in our day-to-day activities, we usually encounter this:</p>
           <p><em>&quot;Atty., my officemate commented in my Facebook account that &quot;I&#8217;m a whore!&quot;, can I sue her?</em></p>
           <p>Another client says, <em>&quot;one of my picture in Facebook was used as a profile picture of a fictitious and derogatory account, what should I do?&quot;</em></p>

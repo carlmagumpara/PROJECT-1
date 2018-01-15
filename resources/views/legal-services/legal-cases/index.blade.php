@@ -29,7 +29,7 @@
                   <td>{{ $legalCase->id }}</td>
                   <td>{{ $legalCase->legalCaseDetail->legal_service }}</td>
                   <td>{{ $legalCase->legalCaseDetail->status }}</td>
-                  <td>{{ $legalCase->created_at->format('F d, Y h:i A') }}</td>
+                  <td>{{ $legalCase->created_at->format('F d, Y') }}</td>
                   <td></td>
                   <td>{{ $legalCase->payment->status }}</td>
                   <td>
